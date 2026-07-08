@@ -643,11 +643,9 @@ pages.push({ file:"portal.html", active:null, title:"Board Portal",
       <p class="lead">Secure sign-in for commissioners and authorized staff to publish notices, message the board and manage meetings.</p>
       <div class="portal-actions">
         <a class="btn btn-navy" href="/.auth/login/aad?post_login_redirect_uri=/admin.html">Sign in with Microsoft</a>
-        <a class="btn btn-ghost" href="/.auth/login/google?post_login_redirect_uri=/admin.html">Sign in with Google</a>
-        <a class="btn btn-ghost" href="/.auth/login/emailpassword?post_login_redirect_uri=/admin.html">Sign in with email & password</a>
         <a class="btn btn-ghost" href="/.auth/login/github?post_login_redirect_uri=/admin.html">Sign in with GitHub</a>
       </div>
-      <p class="portal-reset"><a href="/.auth/login/emailpassword?post_login_redirect_uri=/admin.html">Forgot your password?</a> — email & password accounts can reset from the sign-in screen. Microsoft and Google users reset through their own account pages.</p>
+      <p class="portal-reset">Password changes and resets are handled by your identity provider's own account page. <em>Google and email &amp; password sign-in can be enabled after upgrading hosting to the Standard plan.</em></p>
       <p class="muted">Access is restricted to the <strong>commissioner</strong> and <strong>admin</strong> roles. Public users can view <a href="notices.html">published notices</a> and <a href="meetings.html">meeting recordings</a>.</p>
     </div></section>`
 });
@@ -783,10 +781,10 @@ pages.push({ file:"admin.html", active:null, title:"Board Admin",
               </div>
               <div class="set-card">
                 <h3>Password & sign-in</h3>
-                <p class="muted">Sign-in is handled by your identity provider (Microsoft/Entra ID, Google, or email & password). To change or reset your password, use your provider's account page.</p>
+                <p class="muted">Sign-in is handled by your identity provider (currently Microsoft/Entra ID or GitHub). To change or reset your password, use your provider's account page.</p>
                 <a class="btn btn-ghost" href="https://account.live.com/password/reset" target="_blank" rel="noopener">Reset Microsoft password</a>
-                <a class="btn btn-ghost" href="https://myaccount.google.com/security" target="_blank" rel="noopener" style="margin-top:.4rem">Google account security</a>
-                <p class="muted" style="font-size:.85rem;margin-top:.5rem">Email & password accounts can self-reset from the sign-in page's <em>“Forgot password?”</em> link.</p>
+                <a class="btn btn-ghost" href="https://github.com/settings/security" target="_blank" rel="noopener" style="margin-top:.4rem">GitHub security settings</a>
+                <p class="muted" style="font-size:.85rem;margin-top:.5rem">Google and email & password sign-in (with self-service reset) can be added after upgrading hosting to the Standard plan.</p>
               </div>
               <div class="set-card">
                 <h3>Backend status</h3>

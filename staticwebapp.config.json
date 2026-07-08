@@ -12,35 +12,8 @@
     { "route": "/api/people", "methods": ["POST"], "allowedRoles": ["admin", "commissioner"] },
     { "route": "/api/people/*", "methods": ["DELETE"], "allowedRoles": ["admin", "commissioner"] },
     { "route": "/.auth/login/github", "allowedRoles": ["anonymous"] },
-    { "route": "/.auth/login/aad", "allowedRoles": ["anonymous"] },
-    { "route": "/.auth/login/google", "allowedRoles": ["anonymous"] },
-    { "route": "/.auth/login/emailpassword", "allowedRoles": ["anonymous"] }
+    { "route": "/.auth/login/aad", "allowedRoles": ["anonymous"] }
   ],
-  "auth": {
-    "identityProviders": {
-      "google": {
-        "registration": {
-          "clientIdSettingName": "GOOGLE_CLIENT_ID",
-          "clientSecretSettingName": "GOOGLE_CLIENT_SECRET"
-        }
-      },
-      "customOpenIdConnectProviders": {
-        "emailpassword": {
-          "registration": {
-            "clientIdSettingName": "EMAILPWD_CLIENT_ID",
-            "clientCredential": { "clientSecretSettingName": "EMAILPWD_CLIENT_SECRET" },
-            "openIdConnectConfiguration": {
-              "wellKnownOpenIdConfiguration": "https://EMAILPWD_ISSUER/.well-known/openid-configuration"
-            }
-          },
-          "login": {
-            "nameClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
-            "scopes": ["openid", "profile", "email"]
-          }
-        }
-      }
-    }
-  },
   "responseOverrides": {
     "401": { "redirect": "/portal.html", "statusCode": 302 },
     "403": { "redirect": "/portal.html", "statusCode": 302 },
