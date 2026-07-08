@@ -590,3 +590,29 @@ html[data-theme="dark"] .menu a.nav-emg:hover{color:#ff8a80}
 html[data-theme="dark"] .profile-menu,html[data-theme="dark"] .set-card{background:var(--mc-cream)}
 html[data-theme="dark"] .profile-item{color:var(--mc-ink)}
 /* ================== END ADMIN CONSOLE ================== */
+/* ================== DETAIL & MIRROR PAGES ================== */
+.detail-layout{display:grid;grid-template-columns:1fr;gap:2.2em}
+@media(min-width:900px){.detail-layout{grid-template-columns:minmax(0,1fr) 20rem}}
+.detail-main{max-width:none}
+.detail-badge{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:14px;background:var(--mc-navy);color:#fff;margin-bottom:.8em}
+.detail-badge svg{width:28px;height:28px}
+.detail-adopted{margin-top:1.4em;padding:.7em 1em;background:var(--mc-cream);border-left:3px solid var(--mc-gold);border-radius:8px;font-size:.95rem}
+.detail-aside{display:flex;flex-direction:column;gap:1.2em}
+.detail-aside .infocard{margin:0}
+.infocard .ic-h{margin:0 0 .6em;font-family:'Fraunces';color:var(--mc-navy);font-size:1.15rem}
+.detail-aside .btn{display:block;width:100%;text-align:center;margin-top:.6em}
+.person-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.7em}
+.person-list li{display:flex;flex-direction:column;line-height:1.35}
+.person-list li strong{color:var(--mc-navy)}
+.person-list li span{font-size:.85rem;color:var(--mc-slate,#5a6472)}
+.minicard-link{display:flex;flex-direction:column;text-decoration:none;color:inherit;transition:transform .16s ease,box-shadow .16s ease}
+.minicard-link:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(12,42,77,.14)}
+.minicard-link .mc-more{margin-top:auto;padding-top:.7em;color:var(--mc-teal,#1c7c8c);font-weight:600;font-size:.9rem}
+.mc-tag{display:inline-block;margin-top:.5em;font-size:.75rem;font-weight:600;color:var(--mc-navy);background:var(--mc-cream);padding:.2em .6em;border-radius:999px}
+.sitemap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.8em}
+.sitemap-col h2{font-family:'Fraunces';color:var(--mc-navy);font-size:1.2rem;margin:0 0 .6em;padding-bottom:.35em;border-bottom:2px solid var(--mc-gold)}
+.sitemap-col ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.4em}
+.sitemap-col a{color:var(--mc-ink);text-decoration:none}
+.sitemap-col a:hover{color:var(--mc-teal,#1c7c8c);text-decoration:underline}
+html[data-theme="dark"] .detail-adopted,html[data-theme="dark"] .mc-tag{background:rgba(255,255,255,.06)}
+/* ================== END DETAIL & MIRROR PAGES ================== */

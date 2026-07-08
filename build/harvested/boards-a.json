@@ -1,0 +1,114 @@
+[
+  {
+    "section": "boards",
+    "slug": "911-advisory",
+    "name": "Mercer County E-911 Advisory Board",
+    "blurb": "The Mercer County E-911 Advisory Board advises on the county's emergency 911 communications system and addressing. Details are maintained on the official county site.",
+    "body": [],
+    "canonical": "https://mercercountywv.com/boards/911-advisory/"
+  },
+  {
+    "section": "boards",
+    "slug": "airport-authority",
+    "name": "Mercer County Airport Authority",
+    "blurb": "The Mercer County Airport Authority is the governing board for the county's airport operations and facilities. Details are maintained on the official county site.",
+    "body": [],
+    "canonical": "https://mercercountywv.com/boards/airport-authority/"
+  },
+  {
+    "section": "boards",
+    "slug": "bluewell-psd",
+    "name": "Bluewell Public Service District Board",
+    "blurb": "The Bluewell Public Service District Board governs the public service district serving the Bluewell area of Mercer County. Details are maintained on the official county site.",
+    "body": [],
+    "canonical": "https://mercercountywv.com/boards/bluewell-psd/"
+  },
+  {
+    "section": "boards",
+    "slug": "board-of-health",
+    "name": "Mercer County Board of Health",
+    "blurb": "The Mercer County Board of Health is the governing body overseeing public health policy and the county Health Department. Details are maintained on the official county site.",
+    "body": [],
+    "canonical": "https://mercercountywv.com/boards/board-of-health/"
+  },
+  {
+    "section": "boards",
+    "slug": "bramwell-psd",
+    "name": "Bramwell Public Service District Board",
+    "blurb": "The Bramwell Public Service District Board governs the public service district serving the Bramwell area of Mercer County. Details are maintained on the official county site.",
+    "body": [],
+    "canonical": "https://mercercountywv.com/boards/bramwell-psd/"
+  },
+  {
+    "section": "boards",
+    "slug": "building-commission",
+    "name": "Mercer County Building Commission",
+    "blurb": "The Mercer County Building Commission holds and finances county-owned buildings and facilities on behalf of the Mercer County Commission. Details are maintained on the official county site.",
+    "body": [],
+    "canonical": "https://mercercountywv.com/boards/building-commission/"
+  },
+  {
+    "section": "boards",
+    "slug": "casewv",
+    "name": "Community Action of Southeastern WV (CASEWV)",
+    "blurb": "CASEWV, Inc. is a community action agency chartered in 1964—the third such agency established in West Virginia—dedicated to empowering individuals and families in southeastern West Virginia to achieve self-sufficiency and improve their quality of life.",
+    "body": [
+      "Community Action of South Eastern West Virginia, Inc. (CASEWV) has been serving the people of southeastern West Virginia since its charter in 1964. As the third such agency established in West Virginia, CASEWV is dedicated to empowering individuals and families to achieve self-sufficiency and improve their overall quality of life.",
+      "Driven by a volunteer Board of Directors representing a diverse cross-section of the community—elected officials, private sector leaders, and representation of the limited-income sector—CASEWV ensures that the voices of those it serves are heard and their needs are met. The organization envisions safe, healthy, inclusive communities to support individuals and families in reaching their full potential."
+    ],
+    "canonical": "https://mercercountywv.com/boards/casewv/"
+  },
+  {
+    "section": "boards",
+    "slug": "civil-service",
+    "name": "Civil Service Commission",
+    "blurb": "The Civil Service Commission administers civil-service processes for eligible Mercer County employees. Details are maintained on the official county site.",
+    "body": [],
+    "canonical": "https://mercercountywv.com/boards/civil-service/"
+  },
+  {
+    "section": "boards",
+    "slug": "coal-heritage-highway-authority",
+    "name": "National Coal Heritage Highway Authority Board",
+    "blurb": "The National Coal Heritage Highway Authority Board is the governing body for the National Coal Heritage Highway in the Mercer County region. Details are maintained on the official county site.",
+    "body": [],
+    "canonical": "https://mercercountywv.com/boards/coal-heritage-highway-authority/"
+  },
+  {
+    "section": "boards",
+    "slug": "cvb",
+    "name": "Mercer County Convention and Visitors Bureau Board",
+    "blurb": "The Mercer County Convention and Visitors Bureau is a non-profit destination marketing organization and the official tourism marketing body for Mercer County, funded by the six percent lodging tax paid by visitors.",
+    "body": [
+      "The Mercer County Convention and Visitors Bureau is a non-profit destination marketing organization in Mercer County, West Virginia. Through digital and print marketing and social media, the Mercer County CVB promotes Mercer County and the municipalities of Athens, Bluefield, Bramwell and Princeton. The CVB is the official tourism marketing organization for the county and is funded by the six percent lodging tax paid by visitors to Mercer County, West Virginia.",
+      "Mission Statement: The Mercer County Convention and Visitors Bureau creates economic growth promoting the county as a destination."
+    ],
+    "canonical": "https://mercercountywv.com/boards/cvb/"
+  },
+  {
+    "section": "boards",
+    "slug": "development-authority",
+    "name": "Mercer County Development Authority",
+    "blurb": "The Mercer County Development Authority promotes business investment in Mercer County, which has a history in manufacturing, technology, and tourism and is served by I-77 with access to eight major regional markets.",
+    "body": [
+      "Mercer County is home to a rich history of manufacturing, technology, and tourism. I-77 runs through the heart of the county and provides quick access to 8 major markets in the region. The Mercer County Development Authority team stands ready to help businesses invest and locate in Mercer County."
+    ],
+    "canonical": "https://mercercountywv.com/boards/development-authority/"
+  },
+  {
+    "section": "boards",
+    "slug": "dilapidated-structures-committee",
+    "name": "Mercer County Dilapidated Structures Committee",
+    "blurb": "The Mercer County Dilapidated Structures Committee reviews and prioritizes abatement of abandoned and deteriorating structures under the county's dilapidated buildings ordinance. Details are maintained on the official county site.",
+    "body": [],
+    "canonical": "https://mercercountywv.com/boards/dilapidated-structures-committee/"
+  },
+  {
+    "section": "boards",
+    "slug": "fire",
+    "name": "Mercer County Fire Board",
+    "blurb": "The Mercer County Fire Board coordinates and supports fire protection services and the county's volunteer fire departments. Details are maintained on the official county site.",
+    "body": [],
+    "canonical": "https://mercercountywv.com/boards/fire/"
+  }
+]

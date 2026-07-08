@@ -1,4 +1,4 @@
-import { writeFileSync, mkdirSync } from "fs";
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import { page, esc } from "./layout.mjs";
@@ -7,6 +7,31 @@ import * as D from "./data.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dirname, "..");
+
+/* ---------- harvested detail content (mirror of official county site) ---------- */
+const contentPath = join(__dirname, "gov-content.json");
+const content = existsSync(contentPath) ? JSON.parse(readFileSync(contentPath, "utf8")) : [];
+const bySection = { offices:[], agencies:[], boards:[], ordinances:[], documents:[], bids:[], careers:[], parks:[] };
+for (const e of content) { if (bySection[e.section]) bySection[e.section].push(e); }
+// entities that get their own detail page (non-empty slug, not a section index)
+const detailEntities = content.filter(e =>
+  ["offices","agencies","boards","ordinances"].includes(e.section) && e.slug && e.slug !== e.section);
+const detailFile = (section, slug) => `${section}-${slug}.html`;
+const hasDetail = new Set(detailEntities.map(e => detailFile(e.section, e.slug)));
+// reconcile directory ids (data.mjs) with harvested slugs (official site)
+const OFFICE_ALIAS = { "circuit-court":"circuit-court-judges", "family-court":"family-court-judges", magistrate:"magistrate-judges" };
+const AGENCY_ALIAS = { hatfield:"hatfield-mccoy-trails" };
+const officeHref = id => { const s = OFFICE_ALIAS[id] || id; const f = detailFile("offices", s); return hasDetail.has(f) ? f : undefined; };
+const agencyHref = id => {
+  if (id === "parks") return "parks.html";
+  const s = AGENCY_ALIAS[id] || id; const f = detailFile("agencies", s); return hasDetail.has(f) ? f : undefined;
+};
+const SECTION_META = {
+  offices:{ label:"Elected Offices", index:"offices.html", eyebrow:"Government" },
+  agencies:{ label:"Departments & Agencies", index:"agencies.html", eyebrow:"Government" },
+  boards:{ label:"Boards & Authorities", index:"boards.html", eyebrow:"Government" },
+  ordinances:{ label:"Ordinances", index:"ordinances.html", eyebrow:"County code" }
+};
 
 /* semantic icon mapping (replaces emoji) */
 const IC = {
@@ -267,7 +292,7 @@ pages.push({ file:"offices.html", active:"offices.html", title:"Elected Offices"
   desc:"Mercer County elected offices and courts — Assessor, County Clerk, Circuit Clerk, Sheriff, Prosecuting Attorney and the courts.",
   body: crumb([{label:"Home",href:"index.html"},{label:"Offices"}])
   + pageHead({eyebrow:"Government",title:"Elected Offices & Courts",sub:"Constitutional offices and courts that serve Mercer County residents."})
-  + `<section class="band"><div class="wrap"><div class="svc-grid wide">${D.offices.map(o=>svcTile(o)).join("")}</div></div></section>`
+  + `<section class="band"><div class="wrap"><div class="svc-grid wide">${D.offices.map(o=>svcTile({...o, href:o.href||officeHref(o.id)})).join("")}</div></div></section>`
   + quickbar()
 });
 
@@ -276,7 +301,15 @@ pages.push({ file:"agencies.html", active:"agencies.html", title:"Departments & 
   desc:"Mercer County departments and agencies — 911, Emergency Management, Animal Shelter, Health, Airport, Recycling and more.",
   body: crumb([{label:"Home",href:"index.html"},{label:"Agencies"}])
   + pageHead({eyebrow:"Government",title:"Departments & Agencies",sub:"The programs and services the county operates for residents every day."})
-  + `<section class="band"><div class="wrap"><div class="svc-grid wide">${D.agencies.map(o=>svcTile(o)).join("")}</div></div></section>`
+  + `<section class="band"><div class="wrap"><div class="svc-grid wide">${D.agencies.map(o=>svcTile({...o, href:o.href||agencyHref(o.id)})).join("")}</div>`
+  + (()=>{
+      const covered = new Set(D.agencies.map(a=>AGENCY_ALIAS[a.id]||a.id));
+      const extras = bySection.agencies.filter(a=>a.slug && !covered.has(a.slug) && a.slug!=="animal-shelter");
+      if(!extras.length) return "";
+      return `<div class="sec-head reveal" style="margin-top:2.4em"><span class="eyebrow">Cities, towns &amp; partners</span><h2>Municipalities &amp; partner agencies</h2><p class="lead">Incorporated communities and partner organizations that serve Mercer County residents.</p></div>
+      <div class="svc-grid wide">${extras.map(a=>svcTile({id:a.slug, name:a.name, desc:a.blurb, href:detailFile("agencies",a.slug)})).join("")}</div>`;
+    })()
+  + `</div></section>`
 });
 
 /* ANIMAL SHELTER (detail page) */
@@ -420,7 +453,17 @@ pages.push({ file:"boards.html", active:"boards.html", title:"Boards & Authoriti
   desc:"Mercer County boards, authorities and commissions appointed by the County Commission.",
   body: crumb([{label:"Home",href:"index.html"},{label:"Boards"}])
   + pageHead({eyebrow:"Government",title:"Boards, Authorities & Commissions",sub:"The County Commission appoints citizen members to the boards and authorities that guide public services. Interested in serving? Submit a letter of interest."})
-  + `<section class="band"><div class="wrap"><div class="card-grid">${D.boards.map(b=>`<article class="minicard reveal"><span class="mc-icon">${iconByName(b.name)}</span><h3>${esc(b.name)}</h3><p>${esc(b.desc)}</p></article>`).join("")}</div>
+  + `<section class="band"><div class="wrap"><div class="card-grid">${
+      (bySection.boards.length
+        ? bySection.boards.slice().sort((a,b)=>a.name.localeCompare(b.name)).map(b=>{
+            const f = detailFile("boards", b.slug);
+            const inner = `<span class="mc-icon">${iconByName(b.name)}</span><h3>${esc(b.name)}</h3><p>${esc(b.blurb||"")}</p>`;
+            return hasDetail.has(f)
+              ? `<a class="minicard minicard-link reveal" href="${f}">${inner}<span class="mc-more">Details →</span></a>`
+              : `<article class="minicard reveal">${inner}</article>`;
+          }).join("")
+        : D.boards.map(b=>`<article class="minicard reveal"><span class="mc-icon">${iconByName(b.name)}</span><h3>${esc(b.name)}</h3><p>${esc(b.desc)}</p></article>`).join(""))
+    }</div>
       <p class="center"><a class="btn btn-navy" href="contact.html">Apply to serve →</a></p></div></section>`
 });
 
@@ -727,6 +770,144 @@ pages.push({ file:"404.html", active:null, title:"Page not found",
     </div></section>`
 });
 
+/* ---------- detail pages (mirror of official county content) ---------- */
+const contactCard = c => {
+  if(!c) return "";
+  const rows = [];
+  if(c.phone)   rows.push(`<p><strong>${icon("headset","tb-ic")} Phone</strong><br><a href="tel:${esc(c.phone.replace(/[^+\d]/g,""))}">${esc(c.phone)}</a></p>`);
+  if(c.email)   rows.push(`<p><strong>${icon("document","tb-ic")} Email</strong><br><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>`);
+  if(c.address) rows.push(`<p><strong>${icon("home","tb-ic")} Address</strong><br>${esc(c.address)}</p>`);
+  if(c.hours)   rows.push(`<p><strong>${icon("calendar","tb-ic")} Hours</strong><br>${esc(c.hours)}</p>`);
+  if(c.meets)   rows.push(`<p><strong>${icon("calendar","tb-ic")} Meets</strong><br>${esc(c.meets)}</p>`);
+  if(c.admission) rows.push(`<p><strong>${icon("ticket","tb-ic")} Admission</strong><br>${esc(c.admission)}</p>`);
+  if(c.website) rows.push(`<p><strong>${icon("globe","tb-ic")} Website</strong><br><a href="${esc(c.website)}" target="_blank" rel="noopener">${esc(c.website.replace(/^https?:\/\//,"").replace(/\/$/,""))} ↗</a></p>`);
+  return rows.length ? `<div class="infocard reveal"><h3 class="ic-h">Contact</h3>${rows.join("")}</div>` : "";
+};
+const peopleCard = (people, heading="Members") => {
+  if(!people || !people.length) return "";
+  return `<div class="infocard reveal"><h3 class="ic-h">${esc(heading)}</h3><ul class="person-list">${
+    people.map(p=>`<li><strong>${esc(p.name)}</strong>${p.title?`<span>${esc(p.title)}</span>`:""}</li>`).join("")
+  }</ul></div>`;
+};
+const renderDetail = e => {
+  const meta = SECTION_META[e.section];
+  const ic = e.section==="offices" ? iconById(e.slug) : iconByName(e.name);
+  const hasBody = e.body && e.body.length;
+  const main = hasBody
+    ? e.body.map(p=>`<p>${esc(p)}</p>`).join("")
+    : `<p class="lead">${esc(e.blurb||"")}</p><p class="muted">Full details for this ${e.section==="ordinances"?"ordinance":"office"} are maintained on the official Mercer County website.</p>`;
+  const adopted = e.adopted ? `<p class="detail-adopted"><strong>Adopted:</strong> ${esc(e.adopted)}</p>` : "";
+  const peopleHeading = e.section==="offices" ? "Officials" : e.section==="boards" ? "Board members" : "Contacts";
+  return crumb([{label:"Home",href:"index.html"},{label:meta.label,href:meta.index},{label:e.name}])
+    + pageHead({eyebrow:meta.eyebrow, title:e.name, sub:hasBody?e.blurb:""})
+    + `<section class="band"><div class="wrap detail-layout">
+        <div class="detail-main prose reveal"><span class="detail-badge" aria-hidden="true">${ic}</span>${main}${adopted}</div>
+        <aside class="detail-aside">
+          ${contactCard(e.contact)}
+          ${peopleCard(e.people, peopleHeading)}
+          <div class="infocard reveal">
+            ${e.canonical?`<a class="btn btn-ghost" href="${esc(e.canonical)}" target="_blank" rel="noopener">View on official county site ↗</a>`:""}
+            <a class="btn btn-navy" href="${meta.index}">← Back to ${esc(meta.label)}</a>
+          </div>
+        </aside>
+      </div></section>`;
+};
+for(const e of detailEntities){
+  const meta = SECTION_META[e.section];
+  pages.push({
+    file: detailFile(e.section, e.slug),
+    active: meta.index,
+    title: e.name,
+    desc: e.blurb || `${e.name} — ${D.county.name}.`,
+    body: renderDetail(e)
+  });
+}
+
+/* ---------- Ordinances index ---------- */
+{
+  const ords = bySection.ordinances.filter(o=>o.slug && o.slug!=="ordinances")
+    .sort((a,b)=>a.name.localeCompare(b.name));
+  pages.push({ file:"ordinances.html", active:null, title:"Ordinances",
+    desc:"Mercer County ordinances and regulatory orders adopted by the County Commission — dilapidated buildings, fireworks, floodplain, litter, noise, animal control and more.",
+    body: crumb([{label:"Home",href:"index.html"},{label:"Government",href:"government.html"},{label:"Ordinances"}])
+    + pageHead({eyebrow:"County code",title:"Ordinances & County Code",sub:"Regulatory orders and ordinances adopted by the Mercer County Commission. Where these summaries differ from the official record, the adopted ordinance and applicable law control."})
+    + `<section class="band"><div class="wrap"><div class="card-grid">${
+        ords.map(o=>{
+          const f = detailFile("ordinances", o.slug);
+          return `<a class="minicard minicard-link reveal" href="${f}"><span class="mc-icon">${iconByName(o.name)}</span><h3>${esc(o.name)}</h3><p>${esc(o.blurb||"")}</p>${o.adopted?`<span class="mc-tag">Adopted ${esc(o.adopted)}</span>`:""}<span class="mc-more">Read summary →</span></a>`;
+        }).join("")
+      }</div>
+      <p class="muted center" style="margin-top:1.6em">Full ordinance text is available from the <a href="https://mercercountywv.com/ordinances/" target="_blank" rel="noopener">official county ordinances page ↗</a> and the County Clerk.</p>
+      </div></section>`
+  });
+}
+
+/* ---------- Documents / Bids / Careers / Parks section pages ---------- */
+const officialSectionPage = (file, sec, {eyebrow, title, sub, extra=""}) => {
+  const e = bySection[sec][0] || {};
+  pages.push({ file, active:null, title,
+    desc: e.blurb || sub,
+    body: crumb([{label:"Home",href:"index.html"},{label:"Government",href:"government.html"},{label:title}])
+    + pageHead({eyebrow, title, sub})
+    + `<section class="band"><div class="wrap prose reveal" style="max-width:56rem">
+        ${(e.body&&e.body.length?e.body:[e.blurb||sub]).map(p=>`<p>${esc(p)}</p>`).join("")}
+        ${extra}
+        ${e.canonical?`<p style="margin-top:1.6em"><a class="btn btn-navy" href="${esc(e.canonical)}" target="_blank" rel="noopener">Open on the official county site ↗</a></p>`:""}
+      </div></section>`
+  });
+};
+officialSectionPage("documents.html","documents",{ eyebrow:"Public records", title:"Documents, Budgets & Plans",
+  sub:"County levies, budgets and comprehensive plans published for public review." });
+officialSectionPage("bids.html","bids",{ eyebrow:"Procurement", title:"Bids & Proposals",
+  sub:"Current bids, RFPs, RFQs and invitations to bid for businesses working with Mercer County.",
+  extra:`<p>Formal invitations to bid and requests for proposals are also advertised as <a href="notices.html">public notices</a>. Sealed bids are opened at public commission meetings.</p>` });
+officialSectionPage("careers.html","careers",{ eyebrow:"Work with us", title:"Careers & Employment",
+  sub:"Mercer County is an equal-opportunity employer offering competitive benefits and a supportive work environment.",
+  extra:`<p>Current openings and application instructions are posted with the County Clerk and on our <a href="notices.html">public notices</a> page.</p>` });
+officialSectionPage("parks.html","parks",{ eyebrow:"Recreation", title:"Parks & Recreation",
+  sub:"WV State Parks, county parks and city parks in and around Mercer County — trails, lakes, shelters and family activities.",
+  extra:`<p>Explore <a href="agencies-glenwood.html">Glenwood Recreational Park</a>, plan a trip with <a href="${D.county.visitUrl}" target="_blank" rel="noopener">Visit Mercer County ↗</a>, or ride the <a href="agencies-hatfield-mccoy-trails.html">Hatfield-McCoy Trails</a>.</p>` });
+
+/* ---------- HTML Site Map ---------- */
+{
+  const sec = (h, links) => `<div class="sitemap-col reveal"><h2>${esc(h)}</h2><ul>${
+    links.map(l=>`<li><a href="${l.href}">${esc(l.label)}</a></li>`).join("")}</ul></div>`;
+  const detailLinks = s => detailEntities.filter(e=>e.section===s)
+    .sort((a,b)=>a.name.localeCompare(b.name))
+    .map(e=>({href:detailFile(e.section,e.slug), label:e.name}));
+  pages.push({ file:"site-map.html", active:null, title:"Site Map",
+    desc:"A complete map of every page on the official Mercer County Commission website.",
+    body: crumb([{label:"Home",href:"index.html"},{label:"Site Map"}])
+    + pageHead({eyebrow:"Navigation",title:"Site Map",sub:"Every page on the Mercer County Commission website, in one place."})
+    + `<section class="band"><div class="wrap sitemap-grid">
+        ${sec("Government", [
+          {href:"government.html",label:"The Commission"},
+          {href:"meetings.html",label:"Meetings & Minutes"},
+          {href:"notices.html",label:"Public Notices"},
+          {href:"ordinances.html",label:"Ordinances"},
+          {href:"documents.html",label:"Documents & Budgets"},
+          {href:"bids.html",label:"Bids & Proposals"},
+          {href:"careers.html",label:"Careers"}
+        ])}
+        ${sec("Elected Offices & Courts", detailLinks("offices"))}
+        ${sec("Departments & Agencies", detailLinks("agencies"))}
+        ${sec("Boards & Authorities", detailLinks("boards"))}
+        ${sec("Ordinances", detailLinks("ordinances"))}
+        ${sec("Services & Info", [
+          {href:"news.html",label:"News & Press"},
+          {href:"animal-shelter.html",label:"Animal Shelter & Adoption"},
+          {href:"parks.html",label:"Parks & Recreation"},
+          {href:"emergency.html",label:"Emergency Info"},
+          {href:"resources.html",label:"Resources"},
+          {href:"contact.html",label:"Contact & Directory"},
+          {href:"search.html",label:"Search"},
+          {href:"portal.html",label:"Board Portal"},
+          {href:"about.html",label:"About the County"}
+        ])}
+      </div></section>`
+  });
+}
+
 /* ---------- write core pages ---------- */
 let count=0;
 for(const p of pages){ writeFileSync(join(OUT,p.file), page(p), "utf8"); count++; }
@@ -786,6 +967,16 @@ add("Board Portal","portal.html","board portal sign in commissioners staff");
 D.offices.forEach(o=>add(o.name,"offices.html#"+o.id,o.desc+" "+(o.phone||"")+" "+(o.where||"")));
 D.agencies.forEach(a=>add(a.name,"agencies.html#"+a.id,a.desc+" "+(a.contact||"")));
 D.policies.forEach(p=>add(p.title,"policies/"+p.id+".html",p.title+" legal policy"));
+// detail pages + new sections
+for(const e of detailEntities){
+  add(e.name, detailFile(e.section,e.slug), (e.blurb||"")+" "+((e.body||[]).join(" "))+" "+(e.contact?Object.values(e.contact).join(" "):""));
+}
+add("Ordinances","ordinances.html","ordinances county code fireworks floodplain litter noise dilapidated animal control spay neuter");
+add("Documents & Budgets","documents.html","documents budgets levies comprehensive plans public records");
+add("Bids & Proposals","bids.html","bids rfp rfq proposals procurement invitation to bid");
+add("Careers","careers.html","careers jobs employment openings equal opportunity employer");
+add("Parks & Recreation","parks.html","parks recreation glenwood state parks trails lakes shelters");
+add("Site Map","site-map.html","site map index all pages directory");
 writeFileSync(join(OUT,"search-index.json"), JSON.stringify(idx), "utf8");
 
 /* ---------- sitemap + robots ---------- */

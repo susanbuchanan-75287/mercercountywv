@@ -1,0 +1,132 @@
+[
+  {
+    "section": "offices",
+    "slug": "assessor",
+    "name": "Mercer County Assessor",
+    "blurb": "The Mercer County Assessor's Office fairly determines the value of all real estate and personal property in Mercer County, West Virginia, which forms the basis for property taxes that fund essential county services.",
+    "body": [
+      "The Mercer County Assessor's Office fairly determines the value of all real estate and personal property in Mercer County, West Virginia. This includes homes, commercial buildings, land, and vehicles. These assessments are the basis for property taxes, which fund essential county services.",
+      "Appraisers use established methods and technology to ensure accurate valuations, considering factors like location, size, condition, and market values. The office is committed to transparency and provides property owners with access to information about their assessments.",
+      "Services include information on property tax exemptions (Homestead, veterans, seniors), assistance understanding your assessment, and online access to property records and tax maps."
+    ],
+    "contact": {
+      "phone": "(304) 487-8397",
+      "address": "Mercer County Courthouse"
+    },
+    "people": [],
+    "canonical": "https://mercercountywv.com/offices/assessor/"
+  },
+  {
+    "section": "offices",
+    "slug": "circuit-clerk",
+    "name": "Mercer County Circuit Clerk",
+    "blurb": "The Clerk of the Circuit Court is a full-time elective office that serves as the registrar, recorder, and custodian of all pleadings and documents in the Circuit and Family Courts, and administers the county's jury system.",
+    "body": [
+      "The Clerk of the Circuit Court is a full-time elective office as authorized by Article 8, Section 9 of the West Virginia Constitution. Circuit Clerks are elected for a period of six years, and their duties, responsibilities, and compensation are set by statute.",
+      "The Circuit Clerk is an officer within the Judicial System and is the registrar, recorder, and custodian of all pleadings and documents in the Circuit and Family Courts. The Clerk is also responsible for the administration and management of the Jury System within the county.",
+      "Because the Clerk works with all the entities and agencies that comprise the justice system, communication and cooperation are essential. The Circuit Clerk's Office provides procedural assistance and information to pro se litigants."
+    ],
+    "contact": {},
+    "people": [],
+    "canonical": "https://mercercountywv.com/offices/circuit-clerk/"
+  },
+  {
+    "section": "offices",
+    "slug": "circuit-court-judges",
+    "name": "Mercer County Circuit Court Judges",
+    "blurb": "The Mercer County Circuit Court Judges preside over the Circuit Court, which handles felony criminal cases, civil matters, and appeals from lower courts.",
+    "body": [
+      "This page provides access to relevant documents, forms, and reports related to the Mercer County Circuit Court when available."
+    ],
+    "contact": {},
+    "people": [],
+    "canonical": "https://mercercountywv.com/offices/circuit-court-judges/"
+  },
+  {
+    "section": "offices",
+    "slug": "commissioners",
+    "name": "Mercer County Commissioners",
+    "blurb": "The Mercer County Commissioners are elected officials who oversee the government business of Mercer County, West Virginia.",
+    "body": [
+      "The Mercer County Commission is the governing body of Mercer County. Commissioners are elected officials responsible for overseeing county government operations, budgeting, policy-making, and representing the county at state and national levels.",
+      "Commissioner Greg Puckett serves as the Region III representative. He was first elected in November 2014 and is currently serving his second term (January 1, 2021 - December 31, 2026). He is currently the Executive Director of Community Connections Inc. (CCI), the County's Family Resource Network.",
+      "Since being elected, Commissioner Puckett has worked with fellow Commissioners to re-establish the Mercer County Planning Commission, expand litter control efforts through the Keep Mercer Clean Campaign, establish tighter policies and ordinances to ensure accountability, and pay off the county debt to the regional jail.",
+      "Commissioner Puckett serves on the Board of Directors of the National Association of Counties (NACo), is Chair of NACo's Programs and Services Committee, Vice Chair of NACo's Healthy Counties Initiative, and has served on the National Opioid Taskforce and NACo's Economic Mobility Taskforce."
+    ],
+    "contact": {},
+    "people": [
+      { "name": "Greg Puckett", "title": "Commissioner, Region III (Second Term: January 1, 2021 - December 31, 2026)" }
+    ],
+    "canonical": "https://mercercountywv.com/offices/commissioners/"
+  },
+  {
+    "section": "offices",
+    "slug": "county-clerk",
+    "name": "Mercer County Clerk",
+    "blurb": "The Mercer County Clerk is responsible by statute for the management, recordation, and preservation of official documents, election administration, vital records, voter registration, and a range of other county fiscal and administrative functions.",
+    "body": [
+      "The Mercer County Clerk's responsibilities by statute include: the management, recordation, and preservation of official documents; election administration; fiscal officer duties including payroll, accounts payable, assistance in budgeting, accounting, and bookkeeping; all matters probate; issuance of vital records (birth, death, marriages); voter registration; hunting and fishing licenses; Civil Service Secretary; and Notary services.",
+      "Vital document request forms are available on the Documents tab of the office's website. Applications may be submitted in person at the Mercer County Clerk's Office, 1501 W. Main St., Suite 121, Princeton, WV 24740.",
+      "Photo ID is now required to vote in West Virginia. Residents needing a valid photo ID or assistance with voter registration may contact the Voter Registration Division. Absentee ballot applications for qualified voters (military, citizens abroad, voters with physical disabilities, and first responders on duty) are processed through the West Virginia Secretary of State's portal."
+    ],
+    "contact": {
+      "phone": "304-487-8338 or 304-487-8339 (Voter Registration Division)",
+      "address": "1501 W. Main St., Suite 121, Princeton, WV 24740"
+    },
+    "people": [],
+    "canonical": "https://mercercountywv.com/offices/county-clerk/"
+  },
+  {
+    "section": "offices",
+    "slug": "family-court-judges",
+    "name": "Mercer County Family Court Judges",
+    "blurb": "Family court judges hear cases about the pressing issues facing Mercer County families, including divorce, abuse, neglect, family support, and paternity.",
+    "body": [
+      "Family court judges hear cases about the pressing issues facing Mercer County families, including divorce, abuse, neglect, family support, paternity, and more.",
+      "This page provides access to relevant documents, forms, and reports related to the Mercer County Family Court when available."
+    ],
+    "contact": {},
+    "people": [],
+    "canonical": "https://mercercountywv.com/offices/family-court-judges/"
+  },
+  {
+    "section": "offices",
+    "slug": "magistrate-judges",
+    "name": "Mercer County Magistrate Judges",
+    "blurb": "Mercer County Magistrate Judges oversee the application and enforcement of state laws, municipal laws, and court procedures, including civil cases up to $10,000, misdemeanor cases, and preliminary examinations in felony cases.",
+    "body": [
+      "There are 160 magistrates in West Virginia. There are at least two magistrates in every county, and ten in the largest county, Kanawha.",
+      "Magistrates use their training and sound judgment to oversee the application and enforcement of state laws, municipal laws, and court procedures. Magistrates have jurisdiction over civil cases in which the financial amount in dispute is not more than $10,000. They hear misdemeanor cases and conduct preliminary examinations in felony cases.",
+      "In criminal cases, magistrates issue and record affidavits, complaints, arrest warrants, and search warrants, as well as set bail and make decisions concerning proposed plea agreements, the collection of court costs, cash bonds, and fines.",
+      "Magistrates issue emergency protective orders in cases involving domestic violence. Immediately entering domestic violence petitions into the Domestic Violence Database and Registry is an important part of their work."
+    ],
+    "contact": {},
+    "people": [],
+    "canonical": "https://mercercountywv.com/offices/magistrate-judges/"
+  },
+  {
+    "section": "offices",
+    "slug": "prosecuting-attorney",
+    "name": "Mercer County Prosecuting Attorney",
+    "blurb": "The Mercer County Prosecuting Attorney's Office prosecutes criminal cases on behalf of the State of West Virginia in Mercer County Circuit Court.",
+    "body": [
+      "The Mercer County Prosecuting Attorney's Office handles criminal prosecution in Mercer County. Office staff include attorneys handling discovery, legal secretary functions, and felony matters in Circuit Court."
+    ],
+    "contact": {},
+    "people": [],
+    "canonical": "https://mercercountywv.com/offices/prosecuting-attorney/"
+  },
+  {
+    "section": "offices",
+    "slug": "sheriff",
+    "name": "Mercer County Sheriff",
+    "blurb": "The Mercer County Sheriff's Department is dedicated to safeguarding the community through a blend of time-honored values and modern law-enforcement strategies.",
+    "body": [
+      "The Mercer County Sheriff's Department is dedicated to safeguarding the community through a blend of time-honored values and modern strategies.",
+      "This page provides access to relevant documents, forms, and reports related to the Mercer County Sheriff's Department when available."
+    ],
+    "contact": {},
+    "people": [],
+    "canonical": "https://mercercountywv.com/offices/sheriff/"
+  }
+]

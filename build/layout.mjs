@@ -123,15 +123,17 @@ export function footer(){
       <a href="agencies.html">Departments & Agencies</a>
       <a href="boards.html">Boards & Authorities</a>
       <a href="meetings.html">Meetings & Minutes</a>
+      <a href="ordinances.html">Ordinances</a>
     </div>
     <div class="foot-col">
       <h4>Services</h4>
       <a href="notices.html">Public Notices</a>
-      <a href="news.html">News & Press</a>
+      <a href="bids.html">Bids & Proposals</a>
+      <a href="careers.html">Careers</a>
+      <a href="documents.html">Documents & Budgets</a>
+      <a href="parks.html">Parks & Recreation</a>
       <a href="animal-shelter.html">Animal Shelter & Adoption</a>
-      <a href="contact.html">Contact & Directory</a>
       <a href="contact.html#foia">Records / FOIA</a>
-      <a href="emergency.html">Emergency Info</a>
     </div>
     <div class="foot-col">
       <h4>Explore</h4>
@@ -143,7 +145,7 @@ export function footer(){
   </div>
   <div class="wrap foot-bottom">
     <p>© ${new Date().getFullYear()} ${esc(county.name)}. All rights reserved.</p>
-    <nav class="foot-policies" aria-label="Legal">${pol}</nav>
+    <nav class="foot-policies" aria-label="Legal"><a href="site-map.html">Site Map</a>${pol}</nav>
   </div>
 </footer>
 <button class="totop" id="toTop" aria-label="Back to top" title="Back to top">↑</button>`;
