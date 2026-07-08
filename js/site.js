@@ -236,7 +236,7 @@ function initAdmin(){
         setApi.textContent = r.ok ? "✅ Connected — API is responding." : "⚠️ API reachable but returned an error.";
       }).catch(function(){ setApi.textContent = "⚠️ API not deployed yet (local preview)."; });
     }
-    wireTabs(); wireProfileMenu(); loadAdminNotices(); loadMessages(); loadAdminMeetings();
+    wireTabs(); wireProfileMenu(); loadAdminNotices(); loadMessages(); loadAdminMeetings(); loadDocuments(); loadPeople();
   }
 }
 function wireProfileMenu(){
@@ -302,6 +302,29 @@ function wireTabs(){
       .then(function(r){ if(!r.ok) throw 0; msg.textContent="Saved."; msg.className="form-note ok"; mtf.reset(); loadAdminMeetings(); })
       .catch(function(){ msg.textContent="Could not save (API not deployed yet)."; msg.className="form-note err"; });
   });
+
+  var df = document.getElementById("docForm");
+  if (df) df.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var msg = document.getElementById("docMsg");
+    var body = Object.fromEntries(new FormData(df).entries());
+    if (!body.date) body.date = new Date().toISOString().slice(0,10);
+    msg.textContent = "Publishing…"; msg.className = "form-note";
+    fetch(API + "/documents", { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(body) })
+      .then(function(r){ if(!r.ok) throw 0; msg.textContent="Published."; msg.className="form-note ok"; df.reset(); loadDocuments(); })
+      .catch(function(){ msg.textContent="Could not publish (API not deployed yet)."; msg.className="form-note err"; });
+  });
+
+  var pf = document.getElementById("personForm");
+  if (pf) pf.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var msg = document.getElementById("personMsg");
+    var body = Object.fromEntries(new FormData(pf).entries());
+    msg.textContent = "Saving…"; msg.className = "form-note";
+    fetch(API + "/people", { method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify(body) })
+      .then(function(r){ if(!r.ok) throw 0; msg.textContent="Saved."; msg.className="form-note ok"; pf.reset(); var o=pf.querySelector("input[name=order]"); if(o) o.value="0"; loadPeople(); })
+      .catch(function(){ msg.textContent="Could not save (API not deployed yet)."; msg.className="form-note err"; });
+  });
 }
 function loadAdminNotices(){
   var box = document.getElementById("adminNotices"); if(!box) return;
@@ -336,6 +359,46 @@ function loadAdminMeetings(){
       return '<div class="docrow"><span class="doc-ico">'+(m.video?"🎥":"📄")+'</span><span class="doc-main"><strong>'+esc(m.type||"Meeting")+
         '</strong><span class="doc-meta">'+esc(m.date||"")+' · '+esc(m.time||"")+'</span></span></div>';
     }).join("") : '<p class="muted">No meetings recorded yet.</p>';
+  }).catch(function(){ box.innerHTML = '<p class="muted">API not deployed yet.</p>'; });
+}
+function loadDocuments(){
+  var box = document.getElementById("adminDocuments"); if(!box) return;
+  fetch(API + "/documents").then(function(r){ return r.ok?r.json():{items:[]}; }).then(function(d){
+    var items = d.items||[];
+    box.innerHTML = items.length ? items.map(function(x){
+      return '<div class="docrow"><span class="doc-ico">📄</span><span class="doc-main">'+
+        '<strong><a href="'+esc(x.url)+'" target="_blank" rel="noopener">'+esc(x.title)+'</a></strong>'+
+        '<span class="doc-meta">'+esc(cap(x.category||"General"))+' · '+esc(x.date||"")+'</span></span>'+
+        '<button class="chip ghost" data-del="'+esc(x.id)+'">Delete</button></div>';
+    }).join("") : '<p class="muted">No documents published yet.</p>';
+    box.querySelectorAll("[data-del]").forEach(function(b){ b.addEventListener("click", function(){
+      fetch(API + "/documents/" + encodeURIComponent(b.dataset.del), { method:"DELETE" }).then(loadDocuments).catch(function(){});
+    }); });
+  }).catch(function(){ box.innerHTML = '<p class="muted">API not deployed yet.</p>'; });
+}
+function loadPeople(){
+  var box = document.getElementById("adminPeople"); if(!box) return;
+  var STAT = ["active","retired","former","appointed","vacant"];
+  fetch(API + "/people").then(function(r){ return r.ok?r.json():{items:[]}; }).then(function(d){
+    var items = d.items||[];
+    box.innerHTML = items.length ? items.map(function(p){
+      var opts = STAT.map(function(s){ return '<option value="'+s+'"'+(p.status===s?" selected":"")+'>'+cap(s)+'</option>'; }).join("");
+      return '<div class="roster-row" data-id="'+esc(p.id)+'" data-role="'+esc(p.role||"")+'" data-term="'+esc(p.term||"")+'" data-order="'+esc(p.order||0)+'"><span class="roster-main"><strong>'+esc(p.name)+'</strong>'+
+        '<span class="doc-meta">'+esc(p.role||"")+(p.term?" · "+esc(p.term):"")+'</span></span>'+
+        '<span class="status-pill status-'+esc(p.status||"active")+'">'+esc(cap(p.status||"active"))+'</span>'+
+        '<select class="roster-status" aria-label="Status">'+opts+'</select>'+
+        '<button class="chip ghost" data-del="'+esc(p.id)+'">Remove</button></div>';
+    }).join("") : '<p class="muted">No people added yet.</p>';
+    box.querySelectorAll(".roster-status").forEach(function(sel){ sel.addEventListener("change", function(){
+      var row = sel.closest(".roster-row"); if(!row) return;
+      fetch(API + "/people", { method:"POST", headers:{ "Content-Type":"application/json" },
+        body: JSON.stringify({ id: row.dataset.id, name: row.querySelector("strong").textContent,
+          role: row.dataset.role, term: row.dataset.term, order: row.dataset.order, status: sel.value }) })
+        .then(loadPeople).catch(function(){});
+    }); });
+    box.querySelectorAll("[data-del]").forEach(function(b){ b.addEventListener("click", function(){
+      fetch(API + "/people/" + encodeURIComponent(b.dataset.del), { method:"DELETE" }).then(loadPeople).catch(function(){});
+    }); });
   }).catch(function(){ box.innerHTML = '<p class="muted">API not deployed yet.</p>'; });
 }
 

@@ -42,6 +42,17 @@ async function createEntity(name, entity) {
   await c.createEntity(entity);
 }
 
+async function upsertEntity(name, entity) {
+  const c = await ensure(name);
+  if (!c) {
+    const t = memTable(name);
+    // replace any existing row with the same keys, then add
+    await t.remove(entity.partitionKey, entity.rowKey);
+    return t.create(entity);
+  }
+  await c.upsertEntity(entity, "Merge");
+}
+
 async function deleteEntity(name, partitionKey, rowKey) {
   const c = client(name);
   if (!c) { return memTable(name).remove(partitionKey, rowKey); }
@@ -73,4 +84,4 @@ const json = (status, body) => ({
 
 const id = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
 
-module.exports = { listEntities, createEntity, deleteEntity, principal, hasRole, json, id };
+module.exports = { listEntities, createEntity, upsertEntity, deleteEntity, principal, hasRole, json, id };

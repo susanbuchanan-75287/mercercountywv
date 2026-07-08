@@ -616,6 +616,20 @@ html[data-theme="light"] .nav .seal-img{filter:drop-shadow(0 1px 3px rgba(12,42,
 .docrow .fic{width:40px;height:40px;flex:none;border-radius:10px;display:grid;place-items:center;font-size:1.1rem;
   background:color-mix(in srgb,var(--mc-teal) 12%,transparent);color:var(--mc-teal)}
 .docrow .dmeta{margin-left:auto;font-size:.78rem;color:var(--mc-muted);font-weight:700}
+.doc-ico{width:38px;height:38px;flex:none;border-radius:10px;display:grid;place-items:center;font-size:1.05rem;background:color-mix(in srgb,var(--mc-teal) 12%,transparent)}
+.doc-main{display:flex;flex-direction:column;gap:2px;min-width:0}
+.doc-main a{color:var(--mc-ink);text-decoration:none}.doc-main a:hover{text-decoration:underline}
+.doc-meta{font-size:.78rem;color:var(--mc-muted);font-weight:700}
+.roster-list{display:grid;gap:10px}
+.roster-row{display:flex;gap:12px;align-items:center;background:var(--mc-cream);border:1px solid var(--mc-line);border-radius:12px;padding:12px 16px;flex-wrap:wrap}
+.roster-main{display:flex;flex-direction:column;gap:2px;margin-right:auto;min-width:160px}
+.roster-status{font:inherit;font-size:.85rem;padding:6px 10px;border-radius:9px;border:1.5px solid var(--mc-line);background:var(--mc-paper-2);color:var(--mc-ink)}
+.status-pill{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:3px 10px;border-radius:999px;border:1px solid transparent}
+.status-active{background:color-mix(in srgb,#1f9d55 18%,transparent);color:#1f7a44}
+.status-retired{background:color-mix(in srgb,var(--mc-muted) 22%,transparent);color:var(--mc-muted)}
+.status-former{background:color-mix(in srgb,var(--mc-muted) 16%,transparent);color:var(--mc-muted)}
+.status-appointed{background:color-mix(in srgb,var(--mc-teal) 16%,transparent);color:var(--mc-teal)}
+.status-vacant{background:color-mix(in srgb,#c2410c 16%,transparent);color:#c2410c}
 
 /* commissioner portrait cards */
 .person .ava.photo{background:none;border:2px solid var(--mc-gold);overflow:hidden}

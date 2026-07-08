@@ -643,8 +643,11 @@ pages.push({ file:"portal.html", active:null, title:"Board Portal",
       <p class="lead">Secure sign-in for commissioners and authorized staff to publish notices, message the board and manage meetings.</p>
       <div class="portal-actions">
         <a class="btn btn-navy" href="/.auth/login/aad?post_login_redirect_uri=/admin.html">Sign in with Microsoft</a>
+        <a class="btn btn-ghost" href="/.auth/login/google?post_login_redirect_uri=/admin.html">Sign in with Google</a>
+        <a class="btn btn-ghost" href="/.auth/login/emailpassword?post_login_redirect_uri=/admin.html">Sign in with email & password</a>
         <a class="btn btn-ghost" href="/.auth/login/github?post_login_redirect_uri=/admin.html">Sign in with GitHub</a>
       </div>
+      <p class="portal-reset"><a href="/.auth/login/emailpassword?post_login_redirect_uri=/admin.html">Forgot your password?</a> — email & password accounts can reset from the sign-in screen. Microsoft and Google users reset through their own account pages.</p>
       <p class="muted">Access is restricted to the <strong>commissioner</strong> and <strong>admin</strong> roles. Public users can view <a href="notices.html">published notices</a> and <a href="meetings.html">meeting recordings</a>.</p>
     </div></section>`
 });
@@ -674,6 +677,8 @@ pages.push({ file:"admin.html", active:null, title:"Board Admin",
               <button class="atab active" data-tab="notices" role="tab">📢 <span>Notices</span></button>
               <button class="atab" data-tab="board" role="tab">💬 <span>Board Messages</span></button>
               <button class="atab" data-tab="meetings" role="tab">🎥 <span>Meetings</span></button>
+              <button class="atab" data-tab="documents" role="tab">📄 <span>Documents</span></button>
+              <button class="atab" data-tab="people" role="tab">👥 <span>People & Roster</span></button>
               <button class="atab" data-tab="settings" role="tab">⚙️ <span>Settings</span></button>
             </nav>
             <div class="admin-side-links">
@@ -720,6 +725,49 @@ pages.push({ file:"admin.html", active:null, title:"Board Admin",
             </form>
             <div id="adminMeetings" class="doclist"></div>
           </section>
+          <section class="atab-panel" data-panel="documents" hidden>
+            <h2>Documents & forms</h2>
+            <p class="muted">Publish agendas, budgets, ordinances, permits and public records. Files are linked by URL (host the PDF anywhere the public can reach).</p>
+            <form id="docForm" class="cform">
+              <label>Title<input name="title" required placeholder="FY2026 Adopted Budget"></label>
+              <label>Category
+                <select name="category">
+                  <option>Agenda</option><option>Minutes</option><option>Budget</option>
+                  <option>Ordinance</option><option>Resolution</option><option>Permit / Form</option>
+                  <option>Financial Report</option><option>Public Record</option><option>General</option>
+                </select>
+              </label>
+              <label>Document URL (PDF or link)<input name="url" type="url" required placeholder="https://…"></label>
+              <label>Date<input name="date" type="date"></label>
+              <button class="btn btn-navy" type="submit">Publish document</button>
+              <p class="form-note" id="docMsg" role="status"></p>
+            </form>
+            <h3>Published documents</h3>
+            <div id="adminDocuments" class="doclist"></div>
+          </section>
+          <section class="atab-panel" data-panel="people" hidden>
+            <h2>People & roster</h2>
+            <p class="muted">Maintain commissioners, officials and staff. Mark each person as active, retired, former, appointed or vacant — status shows on the public government page.</p>
+            <form id="personForm" class="cform">
+              <label>Name<input name="name" required placeholder="Jane Doe"></label>
+              <label>Role / title<input name="role" placeholder="County Commissioner"></label>
+              <label>Status
+                <select name="status">
+                  <option value="active">Active</option>
+                  <option value="retired">Retired</option>
+                  <option value="former">Former</option>
+                  <option value="appointed">Appointed</option>
+                  <option value="vacant">Vacant seat</option>
+                </select>
+              </label>
+              <label>Term (optional)<input name="term" placeholder="2023–2029"></label>
+              <label>Display order<input name="order" type="number" value="0"></label>
+              <button class="btn btn-navy" type="submit">Save person</button>
+              <p class="form-note" id="personMsg" role="status"></p>
+            </form>
+            <h3>Roster</h3>
+            <div id="adminPeople" class="roster-list"></div>
+          </section>
           <section class="atab-panel" data-panel="settings" hidden>
             <h2>Settings</h2>
             <div class="set-grid">
@@ -734,9 +782,16 @@ pages.push({ file:"admin.html", active:null, title:"Board Admin",
                 <a class="btn btn-ghost" href="/.auth/logout?post_logout_redirect_uri=/portal.html">Sign out</a>
               </div>
               <div class="set-card">
+                <h3>Password & sign-in</h3>
+                <p class="muted">Sign-in is handled by your identity provider (Microsoft/Entra ID, Google, or email & password). To change or reset your password, use your provider's account page.</p>
+                <a class="btn btn-ghost" href="https://account.live.com/password/reset" target="_blank" rel="noopener">Reset Microsoft password</a>
+                <a class="btn btn-ghost" href="https://myaccount.google.com/security" target="_blank" rel="noopener" style="margin-top:.4rem">Google account security</a>
+                <p class="muted" style="font-size:.85rem;margin-top:.5rem">Email & password accounts can self-reset from the sign-in page's <em>“Forgot password?”</em> link.</p>
+              </div>
+              <div class="set-card">
                 <h3>Backend status</h3>
                 <p class="muted" id="setApi">Checking API…</p>
-                <p class="muted" style="font-size:.85rem">Notices, board messages and meetings are stored via the site's secure API when deployed.</p>
+                <p class="muted" style="font-size:.85rem">Notices, board messages, meetings, documents and the people roster are stored via the site's secure API when deployed.</p>
               </div>
             </div>
           </section>
@@ -930,7 +985,8 @@ const policyBody = {
  "privacy-policy":`<p>The ${D.county.name} respects your privacy. This policy explains what information we collect and how we use it.</p>
   <h2>Information we collect</h2><ul class="checklist"><li><strong>Information you provide</strong> — e.g., when you use a contact form or submit a request.</li><li><strong>Automatic technical data</strong> — standard server logs and privacy-respecting usage metrics to keep the site secure and improve service.</li></ul>
   <h2>How we use it</h2><p>We use information solely to respond to you, operate and secure the website, and meet legal obligations. We do <strong>not</strong> sell personal information.</p>
-  <h2>Cookies & storage</h2><p>We use minimal local storage (for example, to remember your light/dark theme). Sign-in for the board portal uses secure authentication managed by our hosting provider.</p>
+  <h2>Cookies &amp; storage</h2><p>This site uses <strong>no advertising or third-party tracking cookies</strong>. We use minimal local storage on your device for functional preferences only — for example, to remember your light/dark theme choice and which alert you have dismissed. These are not shared with anyone.</p>
+  <p>Sign-in for the board portal is optional and used only by authorized commissioners and staff. Authentication is handled by trusted identity providers — <strong>Microsoft (Entra ID), Google, email &amp; password, or GitHub</strong> — which set a secure session cookie that is strictly necessary to keep you signed in. Password changes and resets are managed by your chosen provider.</p>
   <h2>Public records notice</h2><p>Communications with a government agency may be subject to disclosure under the WV Freedom of Information Act.</p>
   <h2>Contact</h2><p>Questions about privacy? <a href="contact.html">Contact us</a> or call <a href="tel:${D.county.phoneRaw}">${D.county.phone}</a>.</p>`,
  "security-policy":`<p>The ${D.county.name} takes the security of its website and residents' information seriously.</p>

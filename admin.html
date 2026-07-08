@@ -88,6 +88,8 @@
               <button class="atab active" data-tab="notices" role="tab">📢 <span>Notices</span></button>
               <button class="atab" data-tab="board" role="tab">💬 <span>Board Messages</span></button>
               <button class="atab" data-tab="meetings" role="tab">🎥 <span>Meetings</span></button>
+              <button class="atab" data-tab="documents" role="tab">📄 <span>Documents</span></button>
+              <button class="atab" data-tab="people" role="tab">👥 <span>People & Roster</span></button>
               <button class="atab" data-tab="settings" role="tab">⚙️ <span>Settings</span></button>
             </nav>
             <div class="admin-side-links">
@@ -134,6 +136,49 @@
             </form>
             <div id="adminMeetings" class="doclist"></div>
           </section>
+          <section class="atab-panel" data-panel="documents" hidden>
+            <h2>Documents & forms</h2>
+            <p class="muted">Publish agendas, budgets, ordinances, permits and public records. Files are linked by URL (host the PDF anywhere the public can reach).</p>
+            <form id="docForm" class="cform">
+              <label>Title<input name="title" required placeholder="FY2026 Adopted Budget"></label>
+              <label>Category
+                <select name="category">
+                  <option>Agenda</option><option>Minutes</option><option>Budget</option>
+                  <option>Ordinance</option><option>Resolution</option><option>Permit / Form</option>
+                  <option>Financial Report</option><option>Public Record</option><option>General</option>
+                </select>
+              </label>
+              <label>Document URL (PDF or link)<input name="url" type="url" required placeholder="https://…"></label>
+              <label>Date<input name="date" type="date"></label>
+              <button class="btn btn-navy" type="submit">Publish document</button>
+              <p class="form-note" id="docMsg" role="status"></p>
+            </form>
+            <h3>Published documents</h3>
+            <div id="adminDocuments" class="doclist"></div>
+          </section>
+          <section class="atab-panel" data-panel="people" hidden>
+            <h2>People & roster</h2>
+            <p class="muted">Maintain commissioners, officials and staff. Mark each person as active, retired, former, appointed or vacant — status shows on the public government page.</p>
+            <form id="personForm" class="cform">
+              <label>Name<input name="name" required placeholder="Jane Doe"></label>
+              <label>Role / title<input name="role" placeholder="County Commissioner"></label>
+              <label>Status
+                <select name="status">
+                  <option value="active">Active</option>
+                  <option value="retired">Retired</option>
+                  <option value="former">Former</option>
+                  <option value="appointed">Appointed</option>
+                  <option value="vacant">Vacant seat</option>
+                </select>
+              </label>
+              <label>Term (optional)<input name="term" placeholder="2023–2029"></label>
+              <label>Display order<input name="order" type="number" value="0"></label>
+              <button class="btn btn-navy" type="submit">Save person</button>
+              <p class="form-note" id="personMsg" role="status"></p>
+            </form>
+            <h3>Roster</h3>
+            <div id="adminPeople" class="roster-list"></div>
+          </section>
           <section class="atab-panel" data-panel="settings" hidden>
             <h2>Settings</h2>
             <div class="set-grid">
@@ -148,9 +193,16 @@
                 <a class="btn btn-ghost" href="/.auth/logout?post_logout_redirect_uri=/portal.html">Sign out</a>
               </div>
               <div class="set-card">
+                <h3>Password & sign-in</h3>
+                <p class="muted">Sign-in is handled by your identity provider (Microsoft/Entra ID, Google, or email & password). To change or reset your password, use your provider's account page.</p>
+                <a class="btn btn-ghost" href="https://account.live.com/password/reset" target="_blank" rel="noopener">Reset Microsoft password</a>
+                <a class="btn btn-ghost" href="https://myaccount.google.com/security" target="_blank" rel="noopener" style="margin-top:.4rem">Google account security</a>
+                <p class="muted" style="font-size:.85rem;margin-top:.5rem">Email & password accounts can self-reset from the sign-in page's <em>“Forgot password?”</em> link.</p>
+              </div>
+              <div class="set-card">
                 <h3>Backend status</h3>
                 <p class="muted" id="setApi">Checking API…</p>
-                <p class="muted" style="font-size:.85rem">Notices, board messages and meetings are stored via the site's secure API when deployed.</p>
+                <p class="muted" style="font-size:.85rem">Notices, board messages, meetings, documents and the people roster are stored via the site's secure API when deployed.</p>
               </div>
             </div>
           </section>
