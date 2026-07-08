@@ -1,3 +1,7 @@
 node_modules/
 .DS_Store
 Thumbs.db
+
+# Raw scrape source (not used by the built site; keep locally only)
+img/site/
+scrape/

@@ -57,5 +57,30 @@ python -m http.server 8080
 
 Push to `main`; GitHub Pages serves the repo root (`.nojekyll` included so all assets are served).
 
+## Change log
+
+- **Head/SEO/PWA parity pass** (align with Visit Mercer County): standardized `lang="en-US"`,
+  added `viewport-fit=cover`, Apple/mobile web-app meta, and an inline **anti-FOUC theme-init
+  script** (honors `?scoutTheme`, `mc-theme` localStorage, and `prefers-color-scheme` before
+  paint). Fixed the Manrope webfont to load **weight 800** (was synthetic-bold for `.eyebrow`/
+  `.brand`). Made `og:image` **absolute** (fixes broken relative path on `/policies/*`) and added
+  `og:image:alt`, `og:site_name`, and `twitter:card` (summary_large_image). Applied uniformly to
+  all 23 pages. No layout, content, or government-chrome changes.
+
+- **Visit-parity layout polish** (A–E — deeper alignment with the Visit site's feel):
+  - **A. Airier rhythm** — more breathing room around section headings (`.dhead`), grids,
+    `.center` intros and `.two-col` gaps.
+  - **B. Unified card motion** — `.qtile`, `.svc`, `.minicard` and `.person` now share one hover
+    (lift + softer elevation + gold-mix border), with a gold→teal top accent bar on service/
+    directory/person cards.
+  - **C. "Discover Mercer County" photo row** — a scenic 3-tile `.att` band (Historic Bramwell,
+    Bluestone Gorge & Pipestem, "A County Since 1837") on the home page, teeing up the existing
+    "place to explore" bridge to the Visit site. New `.att-grid` (responsive auto-fit) added.
+  - **D. Calmer hero CTAs** — tidier `.hero-cta` spacing/gaps and gentler button padding.
+  - **E. Heading rhythm** — refined kicker letter-spacing, `h2` top-margin and a `24ch` measure.
+  All motion is wrapped in a `prefers-reduced-motion` guard. Government chrome (gov banner,
+  utility topbar, alert bar, JSON-LD schema, nav search) unchanged. CSS lives in a marked
+  **VISIT-PARITY POLISH** block at the end of `css/gov.css`; only `index.html` gained new markup.
+
 ---
 © 2026 · Design refresh for the Mercer County Commission website.

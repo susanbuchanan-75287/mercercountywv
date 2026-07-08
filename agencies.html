@@ -1,75 +1,224 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Agencies — Mercer County Commission, WV</title>
-<meta name="description" content="Mercer County agencies & services: 911, Emergency Management, Animal Shelter, Health Department, Airport, Day Report, Corrections, CVB, Development Authority and more." />
-<meta name="theme-color" content="#0c2a4d" />
-<link rel="manifest" href="manifest.json" />
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
-<link rel="icon" href="icons/favicon-32.png" />
-<script>(()=>{const p=new URLSearchParams(location.search).get("scoutTheme"),s=localStorage.getItem("mc-theme"),t=s||p||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);})();</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Departments &amp; Agencies · Mercer County Commission</title>
+<meta name="description" content="Mercer County departments and agencies — 911, Emergency Management, Animal Shelter, Health, Airport, Recycling and more.">
+<meta name="theme-color" content="#0c2a4d">
+<meta property="og:title" content="Departments &amp; Agencies · Mercer County Commission">
+<meta property="og:description" content="Mercer County departments and agencies — 911, Emergency Management, Animal Shelter, Health, Airport, Recycling and more.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/mcc/seal-map-dark.webp">
+<link rel="icon" href="img/mcc/seal-white.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"GovernmentOrganization","name":"Mercer County Commission","url":"https://mercercountywv.com/","logo":"https://mercercountywv.com/img/mcc/seal-white.png","telephone":"(304) 487-8306","slogan":"A Shining Community in the Mountains of Appalachia","address":{"@type":"PostalAddress","streetAddress":"1501 West Main Street","addressLocality":"Princeton","addressRegion":"WV","postalCode":"24740","addressCountry":"US"},"areaServed":{"@type":"AdministrativeArea","name":"Mercer County, West Virginia"}}</script>
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/gov.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<div class="topbar"><div class="wrap"><span>Mercer County Courthouse · Princeton, WV</span><span class="sep"></span><a href="contact.html">Contact</a><a href="https://visitmercercounty.com/" rel="noopener">Visit / Tourism</a><a href="emergency.html">Emergency Info</a></div></div>
-<header class="nav"><div class="wrap nav-inner">
-  <a class="brand" href="index.html"><div class="seal">MC</div><div class="brand-txt"><small>Mercer County · WV</small><strong>County Commission</strong></div></a>
-  <nav class="main"><ul id="primary-nav">
-    <li><a href="index.html">Home</a></li><li><a href="government.html">Government</a></li><li><a href="offices.html">Offices</a></li><li><a href="agencies.html">Agencies</a></li><li><a href="boards.html">Boards</a></li><li><a href="resources.html">Resources</a></li><li><a href="news.html">News</a></li><li><a href="events.html">Meetings</a></li><li><a href="contact.html">Contact</a></li>
-    <li><button class="theme-toggle" onclick="mcToggleTheme()" aria-label="Toggle dark mode">◐</button></li>
-  </ul></nav>
-  <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
-</div></header>
-
-<section id="main" class="hero short"><div class="hero-grad"></div><div class="wrap hero-inner">
-  <div class="hero-copy" data-reveal>
-    <p class="eyebrow" style="color:var(--mc-gold)">Agencies &amp; Services</p>
-    <h1>County agencies <em>at your service.</em></h1>
-    <p class="lede">Public safety, health, animal care, emergency management and economic development — the agencies that keep Mercer County running.</p>
+<a class="skip" href="#main">Skip to main content</a><div class="govbanner">
+  <div class="wrap gb-in">
+    <span class="gb-flag" aria-hidden="true">🏛️</span>
+    <span>An official website of <strong>Mercer County, West Virginia</strong></span>
+    <button class="gb-how" id="gbHow" aria-expanded="false">Here's how you know ▾</button>
   </div>
-</div>
-<svg class="ridge" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true"><path d="M0,180 L200,120 L400,170 L620,110 L820,165 L1040,105 L1240,160 L1440,120 L1440,220 L0,220 Z" fill="var(--mc-navy-deep)" opacity="0.6"/><path d="M0,200 L240,160 L480,195 L720,150 L980,195 L1220,155 L1440,190 L1440,220 L0,220 Z" fill="var(--mc-paper)"/></svg>
-</section>
-
-<section class="section"><div class="wrap">
-  <div class="filterbox"><input type="search" data-dirfilter placeholder="Search agencies…" aria-label="Search agencies" /></div>
-  <div class="dir">
-    <div class="dircard" data-dircard id="emergency"><div class="ic">📟</div><div><h3>911 &amp; Emergency Communications</h3><p>Countywide emergency dispatch. For emergencies call 911; the administrative office handles addressing and non-emergency coordination.</p></div></div>
-    <div class="dircard" data-dircard><div class="ic">🚨</div><div><h3>Emergency Management (OES)</h3><p>Disaster preparedness, response coordination and public-safety planning.</p></div></div>
-    <div class="dircard" data-dircard id="animal-shelter"><div class="ic">🐾</div><div><h3>Animal Shelter</h3><p>Pet adoptions, lost &amp; found animals and animal-control services.</p></div></div>
-    <div class="dircard" data-dircard id="health"><div class="ic">🏥</div><div><h3>Health Department</h3><p>Public health programs, environmental health, permits and immunizations.</p></div></div>
-    <div class="dircard" data-dircard id="airport"><div class="ic">✈️</div><div><h3>Mercer County Airport</h3><p>General-aviation services at the Mercer County Airport (BLF area).</p></div></div>
-    <div class="dircard" data-dircard><div class="ic">🗂️</div><div><h3>Day Report Center</h3><p>Community-based alternative sentencing and supervision programs.</p></div></div>
-    <div class="dircard" data-dircard><div class="ic">🔒</div><div><h3>Corrections / Regional Jail</h3><p>Coordination with the Southern Regional Jail and inmate services.</p></div></div>
-    <div class="dircard" data-dircard><div class="ic">🧭</div><div><h3>Adult Probation</h3><p>Supervision of adults on probation within the judicial circuit.</p></div></div>
-    <div class="dircard" data-dircard><div class="ic">🧑‍🎓</div><div><h3>Juvenile Probation</h3><p>Supervision and services for juveniles under court jurisdiction.</p></div></div>
-    <div class="dircard" data-dircard><div class="ic">🌊</div><div><h3>Floodplain Management</h3><p>Floodplain permitting and compliance with FEMA/NFIP standards.</p></div></div>
-    <div class="dircard" data-dircard><div class="ic">🗑️</div><div><h3>Litter Control / Keep Mercer Clean</h3><p>Award-winning countywide litter-control and cleanup initiative.</p></div></div>
-    <div class="dircard" data-dircard id="recycling"><div class="ic">♻️</div><div><h3>Recycling</h3><p>Drop-off recycling locations and the monthly recycling schedule.</p></div></div>
-    <div class="dircard" data-dircard><div class="ic">🏞️</div><div><h3>Mercer County Park &amp; Parks</h3><p>County park facilities, ballfields, pool and recreation.</p></div></div>
-    <div class="dircard" data-dircard><div class="ic">🧳</div><div><h3>Convention &amp; Visitors Bureau (CVB)</h3><p>Tourism promotion for Mercer County. <a href="https://visitmercercounty.com/" rel="noopener" style="color:var(--mc-teal);font-weight:700">Visit site →</a></p></div></div>
-    <div class="dircard" data-dircard><div class="ic">📈</div><div><h3>Development Authority</h3><p>Economic development, business recruitment and workforce initiatives.</p></div></div>
-    <div class="dircard" data-dircard><div class="ic">🎡</div><div><h3>County Fair</h3><p>The annual Mercer County Fair and associated events.</p></div></div>
-    <div class="dircard" data-dircard><div class="ic">🎓</div><div><h3>Education / Schools</h3><p>Links to Mercer County Schools and WVU extension services.</p></div></div>
-    <div class="dircard" data-dircard><div class="ic">🛣️</div><div><h3>Hatfield-McCoy Trails</h3><p>Access to the region's renowned ATV/OHV trail system.</p></div></div>
+  <div class="gb-detail" id="gbDetail" hidden>
+    <div class="wrap gb-detail-in">
+      <p><strong>🔒 Official.</strong> This is the official government website of the Mercer County Commission.</p>
+      <p><strong>🛡️ Secure.</strong> A secure connection (https://) means your data is encrypted in transit.</p>
+    </div>
   </div>
-  <p class="diremptynote" data-dirempty>No agencies match your search.</p>
-</div></section>
-
-<footer class="site"><div class="wrap">
-  <div class="foot-grid">
-    <div class="foot-brand"><a class="brand" href="index.html"><div class="seal">MC</div><div class="brand-txt"><small>Mercer County · WV</small><strong style="color:#fff">County Commission</strong></div></a><p>The primary local government body serving Mercer County, West Virginia.</p><p style="margin-top:10px">1501 W Main St, Princeton, WV 24740<br>(304) 487-8306 · Mon–Fri 8:30 AM–4:30 PM</p></div>
-    <div><h5>Government</h5><ul><li><a href="government.html">Commission</a></li><li><a href="offices.html">Elected Offices</a></li><li><a href="agencies.html">Agencies</a></li><li><a href="boards.html">Boards &amp; Authorities</a></li></ul></div>
-    <div><h5>Residents</h5><ul><li><a href="resources.html">Resources &amp; Documents</a></li><li><a href="news.html">News</a></li><li><a href="events.html">Meetings &amp; Events</a></li><li><a href="emergency.html">Emergency Info</a></li></ul></div>
-    <div><h5>More</h5><ul><li><a href="about.html">About the County</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://visitmercercounty.com/" rel="noopener">Visit Mercer County</a></li></ul></div>
+</div><div class="topbar">
+  <div class="wrap topbar-in">
+    <span class="tb-item"><svg class="ic tb-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></svg> 1501 West Main Street, Princeton, WV 24740</span>
+    <span class="tb-sep">·</span>
+    <a class="tb-item" href="tel:+13044878306"><svg class="ic tb-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19a4 4 0 0 1-4 3h-2"/></svg> (304) 487-8306</a>
+    <span class="tb-sep">·</span>
+    <span class="tb-item"><svg class="ic tb-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg> Monday–Friday, 8:30 AM – 4:30 PM</span>
+    <span class="tb-spacer"></span>
+    <a class="tb-item" href="portal.html"><svg class="ic tb-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><path d="M12 15v2"/></svg> Board Portal</a>
+    <button class="tb-item theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
   </div>
-  <div class="foot-bottom"><span>© 2026 Mercer County Commission, West Virginia. All rights reserved.</span><span><a href="resources.html#policies">Privacy</a> · <a href="resources.html#policies">Accessibility</a> · <a href="resources.html#policies">Terms</a></span></div>
-</div></footer>
-<script src="js/site.js"></script>
+</div><header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html" aria-label="Mercer County Commission home">
+      <img class="seal-img" src="img/mcc/seal-white.png" alt="Mercer County seal" width="46" height="46">
+      <span class="brand-txt"><strong>Mercer County</strong><small>West Virginia · Est. 1837</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Open menu">☰</button>
+    <nav class="menu" id="menu" aria-label="Primary"><a href="index.html">Home</a><a href="government.html">Government</a><a href="offices.html">Offices</a><a href="agencies.html" aria-current="page">Agencies</a><a href="boards.html">Boards</a><a href="meetings.html">Meetings</a><a href="news.html">News</a><a href="contact.html">Contact</a>
+      <form class="navsearch" role="search" action="search.html">
+        <input type="search" name="q" placeholder="Search…" aria-label="Search the site">
+        <button type="submit" aria-label="Search"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg></button>
+      </form>
+    </nav>
+  </div>
+</header><div class="alertbar" id="alertbar" hidden>
+  <div class="wrap alert-in">
+    <span class="alert-dot" aria-hidden="true"></span>
+    <strong>Notice:</strong>
+    <span id="alertText"></span>
+    <a id="alertLink" href="notices.html" class="alert-more">Details →</a>
+    <button class="alert-x" id="alertClose" aria-label="Dismiss">✕</button>
+  </div>
+</div><main id="main"><nav class="crumb" aria-label="Breadcrumb"><div class="wrap"><a href="index.html">Home</a><span aria-hidden="true">›</span><span aria-current="page">Agencies</span></div></nav>
+<section class="pagehead"><div class="wrap reveal">
+  <span class="eyebrow">Government</span>
+  <h1>Departments &amp; Agencies</h1>
+  <p class="lead">The programs and services the county operates for residents every day.</p>
+</div></section><section class="band"><div class="wrap"><div class="svc-grid wide"><div class="svc reveal svc-static" id="911">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19a4 4 0 0 1-4 3h-2"/></svg></span>
+  <span class="svc-body"><strong>Mercer County 911</strong>
+  
+  
+  <span class="svc-meta">Emergencies: 911</span>
+  <span class="svc-desc">The Mercer Communications Center is the Public Safety Answering &amp; Dispatch Point for police, fire, EMS and emergency management countywide — processing 911 and non-emergency calls promptly and professionally to help save lives and protect property.</span></span></div><div class="svc reveal svc-static" id="emergency">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 20v-6a6 6 0 0 1 12 0v6"/><path d="M4 20h16"/><path d="M12 4V2M18.5 6l1.4-1.4M5.5 6 4.1 4.6"/></svg></span>
+  <span class="svc-body"><strong>Emergency Management (OES)</strong>
+  
+  
+  
+  <span class="svc-desc">Disaster preparedness, response coordination and public-safety planning for Mercer County.</span></span></div><a class="svc reveal" href="animal-shelter.html" id="animal-shelter">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="6" cy="10" r="1.6"/><circle cx="10.5" cy="6.5" r="1.6"/><circle cx="15" cy="7" r="1.6"/><circle cx="18.5" cy="11" r="1.6"/><path d="M12 12c-2.5 0-4.5 2-5 4.2-.4 1.8 1 3.3 2.8 3.1 .8-.1 1.5-.4 2.2-.4s1.4.3 2.2.4c1.8.2 3.2-1.3 2.8-3.1C16.5 14 14.5 12 12 12Z"/></svg></span>
+  <span class="svc-body"><strong>Animal Shelter</strong>
+  
+  
+  <span class="svc-meta">(304) 425-2838 · 961 Shelter Road, Princeton</span>
+  <span class="svc-desc">An open-admission county shelter (Director Stacy Harman) providing humane care for stray and relinquished animals. Accepts animals from county residents; all pets are spayed/neutered before adoption; rescue-friendly with 501(c)(3) partners.</span></span></a><div class="svc reveal svc-static" id="health">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg></span>
+  <span class="svc-body"><strong>Health Department</strong>
+  
+  
+  <span class="svc-meta">Clinic: Blue Prince Family Health</span>
+  <span class="svc-desc">Empowers residents to live healthy lives in healthy communities. Full clinic services via Blue Prince Family Health: primary and preventative care, wellness and cancer screenings, immunizations and vaccines.</span></span></div><div class="svc reveal svc-static" id="airport">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15.5 3 10V7l2 .5 3 2.5 5 .8L10 4l2.5.3L16 11l4.5 1.2a1.6 1.6 0 0 1 .5 3.3Z"/><path d="M6 20h9"/></svg></span>
+  <span class="svc-body"><strong>Mercer County Airport</strong>
+  
+  
+  <span class="svc-meta">(304) 327-8440 · 300 Markell Dr, Ste 201, Bluefield</span>
+  <span class="svc-desc">General-aviation airport (Manager Jim Pilkins) serving the greater Bluefield/Princeton region under the oversight of the County Commission.</span></span></div><div class="svc reveal svc-static" id="recycling">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 8 5 12l3 1"/><path d="m9.5 5 2-3 2 3-2 1"/><path d="m17 9 2 3-3 2"/><path d="M8 13l-1 5 4 .5"/><path d="m19 12-3.5 6H11"/><path d="M9.5 5 6 11"/></svg></span>
+  <span class="svc-body"><strong>Recycling Program</strong>
+  
+  
+  <span class="svc-meta">749 Frontage Road, Princeton (Landfill)</span>
+  <span class="svc-desc">Drop-off recycling at the Sanitary Landfill. Hours: Mon–Fri 7 AM–5 PM, Sat 8 AM–1 PM. Accepts #1 &amp; #2 plastics, ferrous metals &amp; cans, all aluminum, and bagged paper / broken-down cardboard (materials must be separated).</span></span></div><div class="svc reveal svc-static" id="day-report">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h6a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+  <span class="svc-body"><strong>Day Report Center</strong>
+  
+  
+  
+  <span class="svc-desc">Community-based alternative sentencing and supervision programs.</span></span></div><div class="svc reveal svc-static" id="corrections">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><path d="M12 15v2"/></svg></span>
+  <span class="svc-body"><strong>Corrections / Regional Jail</strong>
+  
+  
+  
+  <span class="svc-desc">Coordination with the Southern Regional Jail and inmate services.</span></span></div><div class="svc reveal svc-static" id="adult-probation">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></span>
+  <span class="svc-body"><strong>Adult Probation</strong>
+  
+  
+  
+  <span class="svc-desc">Supervision of adults on probation within the judicial circuit.</span></span></div><div class="svc reveal svc-static" id="juvenile-probation">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 4h9a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H5z"/><path d="M17 7a3 3 0 0 1 2 0"/></svg></span>
+  <span class="svc-body"><strong>Juvenile Probation</strong>
+  
+  
+  
+  <span class="svc-desc">Supervision and services for juveniles under court jurisdiction.</span></span></div><div class="svc reveal svc-static" id="floodplain">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3c3 4 6 7 6 10.5A6 6 0 0 1 6 13.5C6 10 9 7 12 3Z"/></svg></span>
+  <span class="svc-body"><strong>Floodplain Management</strong>
+  
+  
+  
+  <span class="svc-desc">Floodplain permitting and compliance with FEMA/NFIP development standards.</span></span></div><div class="svc reveal svc-static" id="litter">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><path d="M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13"/><path d="M10 11v6M14 11v6"/></svg></span>
+  <span class="svc-body"><strong>Litter Control / Keep Mercer Clean</strong>
+  
+  
+  
+  <span class="svc-desc">The county's nationally recognized, award-winning litter-control and community-cleanup initiative.</span></span></div><div class="svc reveal svc-static" id="parks">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3c2.5 2 4 4 4 6.5A4 4 0 0 1 8 9.5C8 7 9.5 5 12 3Z"/><path d="M9 13.5a3.5 3.5 0 1 0 6 0"/><path d="M12 13v8"/></svg></span>
+  <span class="svc-body"><strong>Mercer County Park &amp; Parks</strong>
+  
+  
+  
+  <span class="svc-desc">County park facilities, ballfields, pool and recreation across the county.</span></span></div><div class="svc reveal svc-static" id="cvb">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg></span>
+  <span class="svc-body"><strong>Convention &amp; Visitors Bureau</strong>
+  
+  
+  <span class="svc-meta">visitmercercounty.com</span>
+  <span class="svc-desc">Promotes tourism and travel to Mercer County.</span></span></div><div class="svc reveal svc-static" id="development">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 4v16h16"/><path d="m8 15 3-4 3 2 4-6"/></svg></span>
+  <span class="svc-body"><strong>Development Authority</strong>
+  
+  
+  
+  <span class="svc-desc">Economic development, business recruitment and workforce initiatives.</span></span></div><div class="svc reveal svc-static" id="fair">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2 2 2 0 0 0 0 4 2 2 0 0 1 0 4 2 2 0 0 1-2 2H6a2 2 0 0 1-2-2 2 2 0 0 0 0-4 2 2 0 0 0 0-4Z"/><path d="M12 6v12"/></svg></span>
+  <span class="svc-body"><strong>County Fair</strong>
+  
+  
+  
+  <span class="svc-desc">The annual Mercer County Fair and associated community events.</span></span></div><div class="svc reveal svc-static" id="education">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 9 9-4 9 4-9 4z"/><path d="M7 11v4c0 1.5 2.2 2.5 5 2.5s5-1 5-2.5v-4"/><path d="M21 9v5"/></svg></span>
+  <span class="svc-body"><strong>Education / Schools</strong>
+  
+  
+  
+  <span class="svc-desc">Links to Mercer County Schools and WVU Extension services.</span></span></div><div class="svc reveal svc-static" id="hatfield">
+  <span class="svc-icon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></svg></span>
+  <span class="svc-body"><strong>Hatfield-McCoy Trails</strong>
+  
+  
+  
+  <span class="svc-desc">Access to the region's renowned ATV/OHV trail system.</span></span></div></div></div></section></main><footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <img class="seal-img" src="img/mcc/seal-white.png" alt="" width="54" height="54">
+      <div>
+        <strong>Mercer County Commission</strong>
+        <p>A Shining Community in the Mountains of Appalachia</p>
+        <p class="foot-addr">1501 West Main Street, Princeton, WV 24740<br>(304) 487-8306 · Monday–Friday, 8:30 AM – 4:30 PM</p>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Government</h4>
+      <a href="government.html">The Commission</a>
+      <a href="offices.html">Elected Offices</a>
+      <a href="agencies.html">Departments & Agencies</a>
+      <a href="boards.html">Boards & Authorities</a>
+      <a href="meetings.html">Meetings & Minutes</a>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <a href="notices.html">Public Notices</a>
+      <a href="news.html">News & Press</a>
+      <a href="animal-shelter.html">Animal Shelter & Adoption</a>
+      <a href="contact.html">Contact & Directory</a>
+      <a href="contact.html#foia">Records / FOIA</a>
+      <a href="emergency.html">Emergency Info</a>
+    </div>
+    <div class="foot-col">
+      <h4>Explore</h4>
+      <a href="https://susanbuchanan-75287.github.io/visit-mercer-county-wv/" target="_blank" rel="noopener">Visit Mercer County ↗</a>
+      <a href="https://visitmercercounty.com/" target="_blank" rel="noopener">Convention & Visitors Bureau ↗</a>
+      <a href="about.html">About the County</a>
+      <a href="portal.html">Board Portal</a>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <p>© 2026 Mercer County Commission. All rights reserved.</p>
+    <nav class="foot-policies" aria-label="Legal"><a href="policies/accessibility.html">Accessibility Statement</a><a href="policies/content-disclaimer.html">Content Disclaimer</a><a href="policies/legal-notices.html">Legal Notices</a><a href="policies/link-policy.html">Link Policy</a><a href="policies/privacy-policy.html">Privacy Policy</a><a href="policies/security-policy.html">Security Policy</a></nav>
+  </div>
+</footer>
+<button class="totop" id="toTop" aria-label="Back to top" title="Back to top">↑</button><script src="js/site.js" defer></script>
 </body>
 </html>

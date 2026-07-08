@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json.schemastore.org/staticwebapp.config.json",
+  "trailingSlash": "auto",
+  "routes": [
+    { "route": "/admin.html", "allowedRoles": ["admin", "commissioner"] },
+    { "route": "/api/messages", "allowedRoles": ["admin", "commissioner"] },
+    { "route": "/api/notices", "methods": ["POST"], "allowedRoles": ["admin", "commissioner"] },
+    { "route": "/api/notices/*", "methods": ["DELETE"], "allowedRoles": ["admin", "commissioner"] },
+    { "route": "/api/meetings", "methods": ["POST"], "allowedRoles": ["admin", "commissioner"] },
+    { "route": "/.auth/login/github", "allowedRoles": ["anonymous"] },
+    { "route": "/.auth/login/aad", "allowedRoles": ["anonymous"] }
+  ],
+  "responseOverrides": {
+    "401": { "redirect": "/portal.html", "statusCode": 302 },
+    "403": { "redirect": "/portal.html", "statusCode": 302 },
+    "404": { "rewrite": "/404.html" }
+  },
+  "navigationFallback": {
+    "rewrite": "/404.html",
+    "exclude": ["/img/*", "/icons/*", "/css/*", "/js/*", "*.json", "*.xml", "*.txt", "*.webp", "*.jpg", "*.png"]
+  },
+  "mimeTypes": {
+    ".json": "application/json",
+    ".webp": "image/webp",
+    ".webmanifest": "application/manifest+json"
+  },
+  "globalHeaders": {
+    "Content-Security-Policy": "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; connect-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com https://player.vimeo.com https://www.facebook.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests",
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+    "Permissions-Policy": "geolocation=(), microphone=(), camera=(), payment=()"
+  },
+  "platform": { "apiRuntime": "node:20" }
+}

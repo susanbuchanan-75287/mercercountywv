@@ -507,3 +507,147 @@ html[data-theme="dark"] .dircard .ic{background:color-mix(in srgb,var(--mc-gold)
   font-family:"Fraunces",serif;font-weight:700;font-size:1.5rem;color:var(--mc-gold);
   background:radial-gradient(circle at 30% 25%,var(--mc-slate),var(--mc-navy) 70%);border:2px solid var(--mc-gold)}
 .person .role{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--mc-gold)}
+
+/* ============================================================
+   MCC v-gov — stunning government layer (real seal + photography)
+   ============================================================ */
+:root{--mcc-maxw:1200px}
+
+/* real county seal in brand + footer */
+.seal-img{width:46px;height:46px;flex:none;object-fit:contain;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+.nav .seal-img{width:44px;height:44px}
+html[data-theme="light"] .nav .seal-img{filter:drop-shadow(0 1px 3px rgba(12,42,77,.4))}
+.brand-txt small{color:var(--mc-muted)}
+
+/* cinematic government hero (courthouse) */
+.gov-hero{position:relative;overflow:hidden;color:#eef4fb;background:var(--mc-navy);min-height:min(78vh,620px);display:flex;align-items:center}
+.gov-hero .hg{position:absolute;inset:0;z-index:0;
+  background:
+    linear-gradient(90deg,rgba(6,18,34,.92) 0%,rgba(6,18,34,.72) 46%,rgba(6,18,34,.30) 82%,rgba(6,18,34,.12) 100%),
+    linear-gradient(0deg,rgba(6,18,34,.78),rgba(6,18,34,0) 55%),
+    var(--gov-hero-img,url('../img/mcc/courthouse.webp'));
+  background-size:cover;background-position:center 38%}
+@media (prefers-reduced-motion:no-preference){
+  .gov-hero .hg{animation:kenburns 30s var(--ease-out) infinite alternate;transform-origin:60% 45%}
+}
+.gov-hero .hero-inner{position:relative;z-index:2;width:100%;padding:92px 0 150px}
+.gov-hero h1{font-size:clamp(2.3rem,6vw,4.4rem);max-width:18ch;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+.gov-hero h1 em{font-style:italic;color:var(--mc-gold)}
+.gov-hero .lede{max-width:58ch;margin-top:18px;font-size:1.15rem;color:#e8f0f9;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+.gov-hero.short{min-height:auto}
+.gov-hero.short .hero-inner{padding:78px 0 132px}
+@media(max-width:720px){
+  .gov-hero{min-height:auto}
+  .gov-hero .hero-inner{padding:96px 0 110px}
+  .gov-hero h1{max-width:100%}
+}
+
+/* quick-links action bar (self-service) */
+.quickbar{background:var(--mc-navy-deep);position:sticky;top:72px;z-index:40}
+.quickbar .wrap{display:flex;gap:8px;overflow-x:auto;padding:12px 24px;scrollbar-width:none}
+.quickbar .wrap::-webkit-scrollbar{display:none}
+.quickbar a{flex:none;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+  color:#dbe6f2;font-weight:700;font-size:.86rem;padding:9px 16px;border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);transition:.2s}
+.quickbar a:hover{background:var(--mc-gold);color:var(--mc-navy-deep);border-color:var(--mc-gold)}
+.quickbar .ic{font-size:1rem}
+
+/* service tiles with icon chips */
+.svc{display:flex;flex-direction:column;gap:0}
+.svc .svc-ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;
+  background:linear-gradient(135deg,color-mix(in srgb,var(--mc-teal) 18%,transparent),color-mix(in srgb,var(--mc-gold) 14%,transparent));
+  margin-bottom:14px}
+.card.svc h3{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.card.svc h3 .arw{color:var(--mc-teal);transition:transform var(--dur) var(--ease-out)}
+.card.svc:hover h3 .arw{transform:translateX(4px)}
+
+/* breadcrumb */
+.crumb{font-size:.82rem;color:var(--mc-muted);padding:16px 0 0;font-weight:600}
+.crumb a{color:var(--mc-teal)}.crumb a:hover{color:var(--mc-gold)}
+.crumb span{opacity:.6;margin:0 6px}
+
+/* tourism/network bridge band */
+.bridge{position:relative;overflow:hidden;border-radius:var(--mc-radius-lg);color:#fff;
+  min-height:300px;display:flex;align-items:center;box-shadow:var(--mc-elev-2)}
+.bridge::before{content:"";position:absolute;inset:0;z-index:0;transition:transform 1.2s var(--ease-out);
+  background:linear-gradient(110deg,rgba(20,58,46,.9),rgba(12,42,77,.72)),url('../img/mc/hero-overlook.webp');
+  background-size:cover;background-position:center}
+.bridge:hover::before{transform:scale(1.05)}
+.bridge>.wrap-in{position:relative;z-index:1;padding:44px}
+
+/* public notices */
+.notice{display:grid;grid-template-columns:96px 1fr auto;gap:18px;align-items:center;
+  background:var(--mc-cream);border:1px solid var(--mc-line);border-left:4px solid var(--mc-teal);
+  border-radius:14px;padding:18px 22px;margin-bottom:12px;transition:.2s}
+.notice:hover{box-shadow:var(--mc-shadow-sm);transform:translateY(-2px)}
+.notice.urgent{border-left-color:#c0392b}
+.notice .ndate{text-align:center;background:var(--mc-navy);color:#fff;border-radius:12px;padding:8px 4px}
+.notice .ndate b{display:block;font-family:"Fraunces";font-size:1.4rem;color:var(--mc-gold);line-height:1}
+.notice .ndate span{font-size:.66rem;text-transform:uppercase;letter-spacing:.08em}
+.notice h3{font-size:1.1rem;margin:0 0 3px}
+.notice p{color:var(--mc-muted);font-size:.9rem;margin:0}
+.ntag{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:5px 11px;
+  border-radius:999px;white-space:nowrap;background:color-mix(in srgb,var(--mc-teal) 14%,transparent);color:var(--mc-teal)}
+.ntag.urgent{background:#f7e0dc;color:#c0392b}
+
+/* meeting / video cards */
+.meeting{background:var(--mc-cream);border:1px solid var(--mc-line);border-radius:var(--mc-radius);
+  overflow:hidden;transition:.2s}
+.meeting:hover{box-shadow:var(--mc-shadow-sm);transform:translateY(-3px)}
+.meeting .vid{position:relative;aspect-ratio:16/9;background:#0a1a30;display:grid;place-items:center}
+.meeting .vid iframe{width:100%;height:100%;border:0;display:block}
+.meeting .vid .play{width:64px;height:64px;border-radius:50%;background:rgba(240,180,41,.95);
+  display:grid;place-items:center;color:var(--mc-navy-deep);font-size:1.5rem}
+.meeting .m-body{padding:18px 20px}
+.meeting .m-body h3{font-size:1.12rem;margin:0 0 4px}
+.meeting .m-meta{font-size:.82rem;color:var(--mc-muted);font-weight:600}
+.meeting .m-links{margin-top:12px;display:flex;gap:14px;flex-wrap:wrap;font-size:.84rem;font-weight:700}
+.meeting .m-links a{color:var(--mc-teal)}.meeting .m-links a:hover{color:var(--mc-gold)}
+.livepill{display:inline-flex;align-items:center;gap:7px;font-size:.72rem;font-weight:800;text-transform:uppercase;
+  letter-spacing:.08em;color:#fff;background:#c0392b;padding:5px 12px;border-radius:999px}
+.livepill .dot{width:8px;height:8px;border-radius:50%;background:#fff;animation:mcpulse 1.6s infinite}
+
+/* document / minutes list */
+.doclist{display:grid;gap:10px}
+.docrow{display:flex;gap:14px;align-items:center;background:var(--mc-cream);border:1px solid var(--mc-line);
+  border-radius:12px;padding:14px 18px;transition:.2s}
+.docrow:hover{border-color:color-mix(in srgb,var(--mc-teal) 45%,var(--mc-line));box-shadow:var(--mc-shadow-sm)}
+.docrow .fic{width:40px;height:40px;flex:none;border-radius:10px;display:grid;place-items:center;font-size:1.1rem;
+  background:color-mix(in srgb,var(--mc-teal) 12%,transparent);color:var(--mc-teal)}
+.docrow .dmeta{margin-left:auto;font-size:.78rem;color:var(--mc-muted);font-weight:700}
+
+/* commissioner portrait cards */
+.person .ava.photo{background:none;border:2px solid var(--mc-gold);overflow:hidden}
+.person .ava.photo img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.person.big{text-align:left;display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:start}
+.person.big .ava{margin:0}
+
+/* admin / board portal */
+.portal{max-width:960px;margin:0 auto}
+.portal-tabs{display:inline-flex;background:var(--mc-cream);border:1px solid var(--mc-line);border-radius:999px;padding:5px;gap:4px;margin-bottom:26px;flex-wrap:wrap}
+.portal-tabs button{border:0;background:none;padding:10px 20px;border-radius:999px;font-weight:700;cursor:pointer;color:var(--mc-muted);font-family:inherit;font-size:.9rem;transition:.2s}
+.portal-tabs button.active{background:var(--mc-navy);color:#fff}
+.msg{background:var(--mc-cream);border:1px solid var(--mc-line);border-radius:14px;padding:16px 18px;margin-bottom:12px}
+.msg .mhead{display:flex;gap:10px;align-items:center;margin-bottom:6px}
+.msg .who{font-weight:800;font-size:.9rem}
+.msg .when{font-size:.76rem;color:var(--mc-muted);margin-left:auto}
+.msg p{font-size:.94rem;color:var(--mc-ink);margin:0;white-space:pre-wrap}
+.field-row{display:flex;gap:10px;flex-wrap:wrap}
+.inp{width:100%;font:inherit;padding:11px 14px;border-radius:12px;border:1.5px solid var(--mc-line);background:var(--mc-paper-2);color:var(--mc-ink)}
+.inp:focus{outline:none;border-color:var(--mc-teal);box-shadow:var(--ring)}
+.badge-role{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:3px 9px;border-radius:999px;background:color-mix(in srgb,var(--mc-gold) 20%,transparent);color:var(--mc-navy-deep)}
+html[data-theme="dark"] .badge-role{color:var(--mc-gold-soft);background:color-mix(in srgb,var(--mc-gold) 18%,transparent)}
+
+/* back to top */
+.totop{position:fixed;right:20px;bottom:20px;z-index:60;width:46px;height:46px;border-radius:50%;
+  background:var(--mc-navy);color:var(--mc-gold);border:1px solid var(--mc-gold);cursor:pointer;
+  display:grid;place-items:center;font-size:1.1rem;opacity:0;pointer-events:none;transition:.25s;box-shadow:var(--mc-shadow)}
+.totop.show{opacity:1;pointer-events:auto}
+.totop:hover{background:var(--mc-gold);color:var(--mc-navy-deep)}
+
+@media(max-width:640px){
+  .notice{grid-template-columns:64px 1fr}
+  .notice .ntag{grid-column:2;justify-self:start;margin-top:4px}
+  .quickbar{top:64px}
+}

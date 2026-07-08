@@ -1,94 +1,84 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en" data-theme="light">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Mercer County Commission, WV — A Shining Community in the Mountains of Appalachia</title>
-<meta name="description" content="Official website of the Mercer County Commission, West Virginia. County offices, agencies, boards, commission meetings, ordinances, news and resident services in Princeton, Bluefield, Bramwell & Athens." />
-<meta name="theme-color" content="#0c2a4d" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-title" content="Mercer County" />
-<meta property="og:title" content="Mercer County Commission, WV" />
-<meta property="og:description" content="The primary local government body serving Mercer County, West Virginia. Offices, agencies, meetings and resident services." />
-<meta property="og:type" content="website" />
-<link rel="manifest" href="manifest.json" />
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
-<link rel="icon" href="icons/favicon-32.png" />
-<script>
-  (() => {
-    const p = new URLSearchParams(location.search).get("scoutTheme");
-    const s = localStorage.getItem("mc-theme");
-    const t = s || p || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-    document.documentElement.setAttribute("data-theme", t);
-  })();
-</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mercer County Commission</title>
+<meta name="description" content="Official website of the Mercer County Commission — A Shining Community in the Mountains of Appalachia. Meetings, public notices, offices, agencies and services.">
+<meta name="theme-color" content="#0c2a4d">
+<meta property="og:title" content="Mercer County Commission">
+<meta property="og:description" content="Official website of the Mercer County Commission — A Shining Community in the Mountains of Appalachia. Meetings, public notices, offices, agencies and services.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="img/mcc/seal-map-dark.webp">
+<link rel="icon" href="img/mcc/seal-white.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"GovernmentOrganization","name":"Mercer County Commission","url":"https://mercercountywv.com/","logo":"https://mercercountywv.com/img/mcc/seal-white.png","telephone":"(304) 487-8306","slogan":"A Shining Community in the Mountains of Appalachia","address":{"@type":"PostalAddress","streetAddress":"1501 West Main Street","addressLocality":"Princeton","addressRegion":"WV","postalCode":"24740","addressCountry":"US"},"areaServed":{"@type":"AdministrativeArea","name":"Mercer County, West Virginia"}}</script>
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/gov.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-
-<!-- UTILITY BAR -->
-<div class="topbar">
-  <div class="wrap">
-    <span>Mercer County Courthouse · Princeton, WV</span>
-    <span class="sep"></span>
-    <a href="contact.html">Contact</a>
-    <a href="https://visitmercercounty.com/" rel="noopener">Visit / Tourism</a>
-    <a href="emergency.html">Emergency Info</a>
+<a class="skip" href="#main">Skip to main content</a><div class="govbanner">
+  <div class="wrap gb-in">
+    <span class="gb-flag" aria-hidden="true">🏛️</span>
+    <span>An official website of <strong>Mercer County, West Virginia</strong></span>
+    <button class="gb-how" id="gbHow" aria-expanded="false">Here's how you know ▾</button>
   </div>
-</div>
-
-<!-- NAV -->
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a class="brand" href="index.html">
-      <div class="seal">MC</div>
-      <div class="brand-txt"><small>Mercer County · WV</small><strong>County Commission</strong></div>
+  <div class="gb-detail" id="gbDetail" hidden>
+    <div class="wrap gb-detail-in">
+      <p><strong>🔒 Official.</strong> This is the official government website of the Mercer County Commission.</p>
+      <p><strong>🛡️ Secure.</strong> A secure connection (https://) means your data is encrypted in transit.</p>
+    </div>
+  </div>
+</div><div class="topbar">
+  <div class="wrap topbar-in">
+    <span class="tb-item"><svg class="ic tb-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></svg> 1501 West Main Street, Princeton, WV 24740</span>
+    <span class="tb-sep">·</span>
+    <a class="tb-item" href="tel:+13044878306"><svg class="ic tb-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M20 19a4 4 0 0 1-4 3h-2"/></svg> (304) 487-8306</a>
+    <span class="tb-sep">·</span>
+    <span class="tb-item"><svg class="ic tb-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M4 9h16M8 3v4M16 3v4"/></svg> Monday–Friday, 8:30 AM – 4:30 PM</span>
+    <span class="tb-spacer"></span>
+    <a class="tb-item" href="portal.html"><svg class="ic tb-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><path d="M12 15v2"/></svg> Board Portal</a>
+    <button class="tb-item theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+  </div>
+</div><header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html" aria-label="Mercer County Commission home">
+      <img class="seal-img" src="img/mcc/seal-white.png" alt="Mercer County seal" width="46" height="46">
+      <span class="brand-txt"><strong>Mercer County</strong><small>West Virginia · Est. 1837</small></span>
     </a>
-    <nav class="main">
-      <ul id="primary-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="government.html">Government</a></li>
-        <li><a href="offices.html">Offices</a></li>
-        <li><a href="agencies.html">Agencies</a></li>
-        <li><a href="boards.html">Boards</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="events.html">Meetings</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><button class="theme-toggle" onclick="mcToggleTheme()" aria-label="Toggle dark mode">◐</button></li>
-      </ul>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu" aria-label="Open menu">☰</button>
+    <nav class="menu" id="menu" aria-label="Primary"><a href="index.html" aria-current="page">Home</a><a href="government.html">Government</a><a href="offices.html">Offices</a><a href="agencies.html">Agencies</a><a href="boards.html">Boards</a><a href="meetings.html">Meetings</a><a href="news.html">News</a><a href="contact.html">Contact</a>
+      <form class="navsearch" role="search" action="search.html">
+        <input type="search" name="q" placeholder="Search…" aria-label="Search the site">
+        <button type="submit" aria-label="Search"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg></button>
+      </form>
     </nav>
-    <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primary-nav">☰</button>
   </div>
-</header>
-
-<!-- ALERT BAR -->
-<div class="alertbar">
-  <div class="wrap">
-    <span class="dot" aria-hidden="true"></span>
-    <span><b>Public notice:</b> Commission agenda meeting — Tuesday, July 14, 2026, 9:00 AM, Courthouse.</span>
-    <a href="events.html">View meeting schedule →</a>
+</header><div class="alertbar" id="alertbar" hidden>
+  <div class="wrap alert-in">
+    <span class="alert-dot" aria-hidden="true"></span>
+    <strong>Notice:</strong>
+    <span id="alertText"></span>
+    <a id="alertLink" href="notices.html" class="alert-more">Details →</a>
+    <button class="alert-x" id="alertClose" aria-label="Dismiss">✕</button>
   </div>
-</div>
-
-<!-- HERO -->
-<section id="main" class="hero home-hero">
+</div><main id="main">
+<section id="hero" class="hero home-hero mcc">
   <div class="hero-grad"></div>
   <div class="wrap hero-inner">
-    <div class="hero-copy" data-reveal>
-      <p class="eyebrow" style="color:var(--mc-gold)">A Shining Community in the Mountains of Appalachia</p>
-      <h1>Serving Mercer County <em>with integrity.</em></h1>
-      <p class="lede">The Mercer County Commission is the primary local government body serving our community — from the courthouse in Princeton to every town and hollow across southern West Virginia. Find your office, pay your taxes, and get involved.</p>
+    <div class="hero-copy reveal">
+      <p class="eyebrow" style="color:var(--mc-gold)">Official Government · Mercer County, West Virginia</p>
+      <h1>Serving Mercer County <em>with pride.</em></h1>
+      <p class="lede">Meetings and minutes, public notices, county offices and services — all in one place. A Shining Community in the Mountains of Appalachia.</p>
       <div class="hero-cta">
-        <a class="btn btn-gold" href="offices.html">Find a county office →</a>
-        <a class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.45)" href="events.html">Commission meetings</a>
+        <a class="btn btn-gold" href="meetings.html"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3z"/></svg> Meetings &amp; minutes →</a>
+        <a class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.45)" href="notices.html"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10v4a1 1 0 0 0 1 1h2l8 4V5L7 9H5a1 1 0 0 0-1 1Z"/><path d="M18 9a4 4 0 0 1 0 6"/></svg> Public notices</a>
       </div>
-      <p class="hero-credit">Mercer County Courthouse · 1501 W Main Street, Princeton, WV 24740</p>
+      <p class="hero-credit">Mercer County Courthouse · 1501 West Main Street, Princeton</p>
     </div>
   </div>
   <svg class="ridge" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true">
@@ -96,119 +86,191 @@
     <path d="M0,180 L200,120 L400,170 L620,110 L820,165 L1040,105 L1240,160 L1440,120 L1440,220 L0,220 Z" fill="var(--mc-navy-deep)" opacity="0.6"/>
     <path d="M0,200 L240,160 L480,195 L720,150 L980,195 L1220,155 L1440,190 L1440,220 L0,220 Z" fill="var(--mc-paper)"/>
   </svg>
-</section>
-
-<!-- QUICK SERVICES -->
-<section class="section">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">How can we help?</span>
-      <h2>Popular county services.</h2>
-      <p>The things residents look for most — one click away.</p>
-    </div>
-    <div class="grid g3">
-      <a class="card" href="offices.html#assessor"><span class="tag">Assessor</span><h3>Property &amp; Assessments</h3><p>Look up property values, file your assessment and find homestead &amp; farm-use forms.</p><div class="meta" style="margin-top:14px;color:var(--mc-teal);font-weight:700">Assessor's office →</div></a>
-      <a class="card" href="offices.html#sheriff"><span class="tag">Sheriff — Tax Office</span><h3>Pay Property Taxes</h3><p>Pay real-estate and personal-property taxes and view the tax-sale schedule.</p><div class="meta" style="margin-top:14px;color:var(--mc-teal);font-weight:700">Sheriff's tax office →</div></a>
-      <a class="card" href="offices.html#county-clerk"><span class="tag">County Clerk</span><h3>Records &amp; Voting</h3><p>Deeds, marriage licenses, birth/death records, and voter registration.</p><div class="meta" style="margin-top:14px;color:var(--mc-teal);font-weight:700">County clerk →</div></a>
-      <a class="card" href="government.html#meetings"><span class="tag">Commission</span><h3>Meetings &amp; Minutes</h3><p>Agendas, meeting dates and approved minutes of the County Commission.</p><div class="meta" style="margin-top:14px;color:var(--mc-teal);font-weight:700">Meetings &amp; minutes →</div></a>
-      <a class="card" href="government.html#careers"><span class="tag">Employment</span><h3>Careers &amp; Bids</h3><p>Open county positions and current requests for proposals &amp; sealed bids.</p><div class="meta" style="margin-top:14px;color:var(--mc-teal);font-weight:700">Jobs &amp; bids →</div></a>
-      <a class="card" href="agencies.html#animal-shelter"><span class="tag">Animal Shelter</span><h3>Adopt &amp; Report</h3><p>Adoptable pets, lost &amp; found, and animal-control contacts.</p><div class="meta" style="margin-top:14px;color:var(--mc-teal);font-weight:700">Animal shelter →</div></a>
-    </div>
+</section><span id="quicklinks"></span>
+<section class="quickbar-wrap"><div class="wrap">
+  <h2 class="sr-title">Popular services</h2>
+  <div class="quickbar">
+    <a class="qtile reveal" href="offices.html#sheriff"><span class="qicon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M15 9a3 3 0 0 0-3-2c-1.7 0-3 1-3 2.3 0 3 6 1.4 6 4.4 0 1.4-1.3 2.3-3 2.3a3 3 0 0 1-3-2"/><path d="M12 5.5v13"/></svg></span><span>Pay Property Taxes</span></a><a class="qtile reveal" href="offices.html#assessor"><span class="qicon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></svg></span><span>Property Assessment</span></a><a class="qtile reveal" href="meetings.html"><span class="qicon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3z"/></svg></span><span>Watch Meetings</span></a><a class="qtile reveal" href="notices.html"><span class="qicon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10v4a1 1 0 0 0 1 1h2l8 4V5L7 9H5a1 1 0 0 0-1 1Z"/><path d="M18 9a4 4 0 0 1 0 6"/></svg></span><span>Public Notices</span></a><a class="qtile reveal" href="government.html#careers"><span class="qicon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></span><span>Jobs &amp; Bids</span></a><a class="qtile reveal" href="offices.html#county-clerk"><span class="qicon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 12 12 3l8 9"/><path d="M6 12v8h12v-8"/><path d="m9.5 16 2 2 3.5-3.5"/></svg></span><span>Voter Registration</span></a><a class="qtile reveal" href="agencies.html#recycling"><span class="qicon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 8 5 12l3 1"/><path d="m9.5 5 2-3 2 3-2 1"/><path d="m17 9 2 3-3 2"/><path d="M8 13l-1 5 4 .5"/><path d="m19 12-3.5 6H11"/><path d="M9.5 5 6 11"/></svg></span><span>Recycling</span></a><a class="qtile reveal" href="contact.html#foia"><span class="qicon" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 3h7l4 4v6"/><path d="M13 3v4h4"/><circle cx="14" cy="16" r="3.2"/><path d="m17 19 2.5 2.5"/><path d="M6 3v18h5"/></svg></span><span>Records / FOIA</span></a>
   </div>
-</section>
-
-<!-- COMMISSIONERS -->
-<section class="section" style="background:var(--mc-paper-2)">
-  <div class="wrap">
-    <div class="head">
-      <span class="eyebrow">Your elected officials</span>
-      <h2>The County Commission.</h2>
-      <p>Three commissioners, elected countywide, govern Mercer County and oversee its budget, agencies and services.</p>
-    </div>
-    <div class="grid g3">
-      <div class="card person"><div class="ava" aria-hidden="true">GP</div><h3>Greg Puckett</h3><div class="role">Commission President</div><p style="margin-top:8px">Region III · term through Dec 31, 2026. Native southern West Virginian and national leader on prevention, public health and the arts.</p></div>
-      <div class="card person"><div class="ava" aria-hidden="true">BA</div><h3>Bill Archer</h3><div class="role">Commissioner</div><p style="margin-top:8px">Longtime Mercer County advocate and public servant representing residents across the county.</p></div>
-      <div class="card person"><div class="ava" aria-hidden="true">BB</div><h3>Brian Blankenship</h3><div class="role">Commissioner</div><p style="margin-top:8px">Focused on infrastructure, public safety and responsible county stewardship.</p></div>
-    </div>
-    <p style="margin-top:22px"><a class="btn btn-teal" href="government.html">Meet the Commission &amp; how it works →</a></p>
+</div></section><section class="band"><div class="wrap">
+      <div class="dhead reveal"><span class="kicker">Explore your government</span><h2>Everything Mercer County, in one place</h2></div>
+      <div class="feature-grid tall">
+        
+<a class="feature reveal" href="meetings.html" style="">
+  <div class="feature-img" style="background-image:url('img/mcc/commission-event.jpg')"></div>
+  <span class="f-arrow" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20V5"/><path d="m5 12 7-7 7 7"/></svg></span>
+  <div class="feature-body">
+    <span class="f-ic" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3z"/></svg></span>
+    <h3>Meetings &amp; Video</h3>
+    <p>Watch live or on demand, view the schedule and read official minutes.</p>
   </div>
-</section>
-
-<!-- STATS -->
-<section class="statband" data-reveal>
-  <div class="wrap stat-grid">
-    <div class="stat"><b>1837</b><span>year Mercer County was founded</span></div>
-    <div class="stat"><b>~59k</b><span>residents across the county</span></div>
-    <div class="stat"><b>420</b><span>square miles of southern WV</span></div>
-    <div class="stat"><b>M–F</b><span>courthouse open 8:30 AM – 4:30 PM</span></div>
+</a>
+        
+<a class="feature reveal" href="offices.html" style="">
+  <div class="feature-img" style="background-image:url('img/mcc/courthouse-2.webp')"></div>
+  <span class="f-arrow" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20V5"/><path d="m5 12 7-7 7 7"/></svg></span>
+  <div class="feature-body">
+    <span class="f-ic" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9 12 4l9 5"/><path d="M5 9v9M9.5 9v9M14.5 9v9M19 9v9"/><path d="M3 21h18"/></svg></span>
+    <h3>Offices &amp; Courts</h3>
+    <p>Assessor, Clerks, Sheriff, Prosecutor and the county courts.</p>
   </div>
-</section>
-
-<!-- NEWS + GET INVOLVED -->
-<section class="section">
-  <div class="wrap">
-    <div class="grid g2" style="align-items:start;gap:40px">
-      <div>
-        <span class="eyebrow">Latest news</span>
-        <h2 style="font-size:1.9rem;margin:8px 0 18px">County updates</h2>
-        <div class="newsrow"><time>Jul 2026</time><div><h3>Free Tire Disposal Days 2026</h3><p>Residents may drop off used tires at no charge on scheduled county collection days.</p></div></div>
-        <div class="newsrow"><time>Apr 2026</time><div><h3>Recycling Schedule — April 2026</h3><p>Updated curbside and drop-off recycling routes for the month.</p></div></div>
-        <div class="newsrow"><time>Mar 2026</time><div><h3>Pocahontas Waterline Replacement Update</h3><p>Progress on the ongoing waterline replacement project.</p></div></div>
-        <p style="margin-top:18px"><a class="btn btn-ghost" href="news.html">All news →</a></p>
+</a>
+        
+<a class="feature reveal" href="notices.html" style="">
+  <div class="feature-img" style="background-image:url('img/mcc/seal-map-dark.webp')"></div>
+  <span class="f-arrow" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20V5"/><path d="m5 12 7-7 7 7"/></svg></span>
+  <div class="feature-body">
+    <span class="f-ic" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10v4a1 1 0 0 0 1 1h2l8 4V5L7 9H5a1 1 0 0 0-1 1Z"/><path d="M18 9a4 4 0 0 1 0 6"/></svg></span>
+    <h3>Public Notices</h3>
+    <p>Legal ads, bids, hearings and job postings for the record.</p>
+  </div>
+</a>
+        
+<a class="feature reveal" href="agencies.html" style="">
+  <div class="feature-img" style="background-image:url('img/mcc/falls.jpg')"></div>
+  <span class="f-arrow" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20V5"/><path d="m5 12 7-7 7 7"/></svg></span>
+  <div class="feature-body">
+    <span class="f-ic" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 8 5 12l3 1"/><path d="m9.5 5 2-3 2 3-2 1"/><path d="m17 9 2 3-3 2"/><path d="M8 13l-1 5 4 .5"/><path d="m19 12-3.5 6H11"/><path d="M9.5 5 6 11"/></svg></span>
+    <h3>Departments &amp; Services</h3>
+    <p>911, animal shelter, recycling, airport, health and more.</p>
+  </div>
+</a>
+        
+<a class="feature reveal" href="government.html" style="">
+  <div class="feature-img" style="background-image:url('img/mcc/commission-office.jpg')"></div>
+  <span class="f-arrow" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20V5"/><path d="m5 12 7-7 7 7"/></svg></span>
+  <div class="feature-body">
+    <span class="f-ic" aria-hidden="true"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 6a3 3 0 0 1 0 6"/><path d="M17.5 20a5.5 5.5 0 0 0-3-4.9"/></svg></span>
+    <h3>The Commission</h3>
+    <p>Meet your three commissioners and how the county is governed.</p>
+  </div>
+</a>
       </div>
-      <div class="cta-band overlook-band">
-        <span class="eyebrow" style="color:var(--mc-gold-soft)">Get involved</span>
-        <h2>Have your voice heard.</h2>
-        <p>Commission meetings are open to the public. Comment on county business, apply to serve on a board, or reach us anytime.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
-          <a class="btn btn-gold" href="events.html">Meeting schedule →</a>
-          <a class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.45)" href="contact.html">Contact us</a>
+    </div></section><section class="band alt"><div class="wrap">
+      <div class="dhead center reveal"><span class="kicker">Your elected leadership</span><h2>Three commissioners, one community</h2>
+      <p class="lead" style="margin:0 auto">The governing body of Mercer County — adopting the budget, overseeing agencies and serving residents countywide.</p></div>
+      <div class="person-grid">
+        
+        <article class="person reveal">
+          <div class="person-ava" aria-hidden="true">BA</div>
+          <h3>Bill Archer</h3>
+          <p class="person-role">Commission President</p>
+          <p class="person-term">Current — signs the Commission's 2026 official notices as President</p>
+          <p class="person-bio">Commissioner Bill Archer serves as President of the Mercer County Commission for 2026. A longtime advocate for the county, he presides over commission meetings and represents residents across Mercer County.</p>
+        </article>
+        <article class="person reveal">
+          <div class="person-ava" aria-hidden="true">GP</div>
+          <h3>Greg Puckett</h3>
+          <p class="person-role">Commissioner (Region III)</p>
+          <p class="person-term">Terms: 2015–2020, 2021–2026</p>
+          <p class="person-bio">A native southern West Virginian and alumnus of Princeton Senior High and Concord College, Greg Puckett is Executive Director of Community Connections Inc. He helped re-establish the County Planning Commission, launched the award-winning Keep Mercer Clean campaign, invested nearly $2M in the county park, and paid off the regional-jail debt. He serves on the NACo Board of Directors and earned the National Public Leadership in the Arts Award (2021) and the Louis Gorin Award for rural health (2020).</p>
+        </article>
+        <article class="person reveal">
+          <div class="person-ava" aria-hidden="true">BB</div>
+          <h3>Brian Blankenship</h3>
+          <p class="person-role">Commissioner</p>
+          <p class="person-term">Current term</p>
+          <p class="person-bio">Commissioner Brian Blankenship serves on the Mercer County Commission, focusing on infrastructure, public safety and responsible stewardship of county resources on behalf of all residents.</p>
+        </article>
+      </div>
+      <p class="center" style="margin-top:2em"><a class="btn btn-gold" href="government.html">About the Commission →</a></p>
+    </div></section><section class="band"><div class="wrap two-col">
+      <div class="reveal">
+        <div class="dhead" style="margin-bottom:1.2em"><span class="kicker">Stay informed</span><h2>Latest news</h2></div>
+        <div class="newslist">
+        
+          <a class="newsrow" href="news.html">
+            <span class="news-date">Jun 24, 2026</span>
+            <span class="news-body"><span class="tag">Recycling</span><strong>Free Tire Disposal Days 2026</strong></span>
+          </a>
+          <a class="newsrow" href="news.html">
+            <span class="news-date">Mar 3, 2026</span>
+            <span class="news-body"><span class="tag">Recycling</span><strong>Recycling Schedule — April 2026</strong></span>
+          </a>
+          <a class="newsrow" href="news.html">
+            <span class="news-date">Feb 12, 2026</span>
+            <span class="news-body"><span class="tag">Press Release</span><strong>Pocahontas Waterline Replacement Update</strong></span>
+          </a>
+          <a class="newsrow" href="news.html">
+            <span class="news-date">Feb 2, 2026</span>
+            <span class="news-body"><span class="tag">Press Release</span><strong>2026 Board of Review &amp; Equalization Hearing Schedule</strong></span>
+          </a>
         </div>
+        <p><a class="btn btn-ghost" href="news.html">All news →</a></p>
       </div>
+      <div class="reveal">
+        <div class="dhead" style="margin-bottom:1.2em"><span class="kicker">On the calendar</span><h2>Upcoming meetings</h2></div>
+        <div class="mtg-list">
+        
+          <div class="mtg-row">
+            <span class="mtg-cal"><span class="mtg-mon">Jul</span><span class="mtg-day">7</span></span>
+            <span class="mtg-info"><strong>Agenda Meeting</strong><span class="mtg-meta">10:00 AM · Commission Chambers, Courthouse</span></span>
+          </div>
+          <div class="mtg-row">
+            <span class="mtg-cal"><span class="mtg-mon">Jul</span><span class="mtg-day">14</span></span>
+            <span class="mtg-info"><strong>Commission Meeting</strong><span class="mtg-meta">10:00 AM · Commission Chambers, Courthouse</span></span>
+          </div>
+          <div class="mtg-row">
+            <span class="mtg-cal"><span class="mtg-mon">Jul</span><span class="mtg-day">28</span></span>
+            <span class="mtg-info"><strong>Commission Meeting</strong><span class="mtg-meta">3:30 PM · Commission Chambers, Courthouse</span></span>
+          </div>
+        </div>
+        <p><a class="btn btn-ghost" href="meetings.html">Full schedule & video →</a></p>
+      </div>
+    </div></section><section class="statband"><div class="wrap stat-in">
+      <div class="stat reveal"><span class="stat-num">62k+</span><span class="stat-lbl">Residents served</span></div>
+      <div class="stat reveal"><span class="stat-num">189</span><span class="stat-lbl">Years since 1837</span></div>
+      <div class="stat reveal"><span class="stat-num">18+</span><span class="stat-lbl">Boards & authorities</span></div>
+      <div class="stat reveal"><span class="stat-num">2nd&amp;4th</span><span class="stat-lbl">Tuesday meetings</span></div>
+    </div></section>
+<section class="bridge" style="--bridge-img:url('../img/mcc/autumn.jpg')">
+  <div class="bridge-scrim"></div>
+  <div class="wrap bridge-in reveal">
+    <span class="eyebrow light">Plan a visit</span>
+    <h2>More than government — a place to explore</h2>
+    <p>From the Bluestone Gorge to historic Bramwell and the Hatfield-McCoy Trails, discover why Mercer County is a shining community in the mountains of Appalachia.</p>
+    <a class="btn btn-gold" href="https://susanbuchanan-75287.github.io/visit-mercer-county-wv/" target="_blank" rel="noopener">Visit Mercer County ↗</a>
+  </div>
+</section></main><footer class="foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <img class="seal-img" src="img/mcc/seal-white.png" alt="" width="54" height="54">
+      <div>
+        <strong>Mercer County Commission</strong>
+        <p>A Shining Community in the Mountains of Appalachia</p>
+        <p class="foot-addr">1501 West Main Street, Princeton, WV 24740<br>(304) 487-8306 · Monday–Friday, 8:30 AM – 4:30 PM</p>
+      </div>
+    </div>
+    <div class="foot-col">
+      <h4>Government</h4>
+      <a href="government.html">The Commission</a>
+      <a href="offices.html">Elected Offices</a>
+      <a href="agencies.html">Departments & Agencies</a>
+      <a href="boards.html">Boards & Authorities</a>
+      <a href="meetings.html">Meetings & Minutes</a>
+    </div>
+    <div class="foot-col">
+      <h4>Services</h4>
+      <a href="notices.html">Public Notices</a>
+      <a href="news.html">News & Press</a>
+      <a href="animal-shelter.html">Animal Shelter & Adoption</a>
+      <a href="contact.html">Contact & Directory</a>
+      <a href="contact.html#foia">Records / FOIA</a>
+      <a href="emergency.html">Emergency Info</a>
+    </div>
+    <div class="foot-col">
+      <h4>Explore</h4>
+      <a href="https://susanbuchanan-75287.github.io/visit-mercer-county-wv/" target="_blank" rel="noopener">Visit Mercer County ↗</a>
+      <a href="https://visitmercercounty.com/" target="_blank" rel="noopener">Convention & Visitors Bureau ↗</a>
+      <a href="about.html">About the County</a>
+      <a href="portal.html">Board Portal</a>
     </div>
   </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="site">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a class="brand" href="index.html"><div class="seal">MC</div><div class="brand-txt"><small>Mercer County · WV</small><strong style="color:#fff">County Commission</strong></div></a>
-        <p>The primary local government body serving Mercer County, West Virginia — Princeton, Bluefield, Bramwell, Athens &amp; beyond.</p>
-        <p style="margin-top:10px">1501 W Main St, Princeton, WV 24740<br>(304) 487-8306 · Mon–Fri 8:30 AM–4:30 PM</p>
-      </div>
-      <div><h5>Government</h5><ul>
-        <li><a href="government.html">Commission</a></li>
-        <li><a href="offices.html">Elected Offices</a></li>
-        <li><a href="agencies.html">Agencies</a></li>
-        <li><a href="boards.html">Boards &amp; Authorities</a></li>
-      </ul></div>
-      <div><h5>Residents</h5><ul>
-        <li><a href="resources.html">Resources &amp; Documents</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="events.html">Meetings &amp; Events</a></li>
-        <li><a href="emergency.html">Emergency Info</a></li>
-      </ul></div>
-      <div><h5>More</h5><ul>
-        <li><a href="about.html">About the County</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="https://visitmercercounty.com/" rel="noopener">Visit Mercer County</a></li>
-        <li><a href="https://susanbuchanan-75287.github.io/visit-mercer-county-wv/" rel="noopener">Travel Planner</a></li>
-      </ul></div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 Mercer County Commission, West Virginia. All rights reserved.</span>
-      <span><a href="resources.html#policies">Privacy</a> · <a href="resources.html#policies">Accessibility</a> · <a href="resources.html#policies">Terms</a></span>
-    </div>
+  <div class="wrap foot-bottom">
+    <p>© 2026 Mercer County Commission. All rights reserved.</p>
+    <nav class="foot-policies" aria-label="Legal"><a href="policies/accessibility.html">Accessibility Statement</a><a href="policies/content-disclaimer.html">Content Disclaimer</a><a href="policies/legal-notices.html">Legal Notices</a><a href="policies/link-policy.html">Link Policy</a><a href="policies/privacy-policy.html">Privacy Policy</a><a href="policies/security-policy.html">Security Policy</a></nav>
   </div>
 </footer>
-
-<script src="js/site.js"></script>
-<script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(()=>{}));
-  }
-</script>
+<button class="totop" id="toTop" aria-label="Back to top" title="Back to top">↑</button><script src="js/site.js" defer></script>
 </body>
 </html>
