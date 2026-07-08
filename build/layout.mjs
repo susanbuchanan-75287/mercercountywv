@@ -139,6 +139,8 @@ export function footer(){
       <h4>Explore</h4>
       <a href="${county.visitUrl}" target="_blank" rel="noopener">Visit Mercer County ↗</a>
       <a href="${county.cvbUrl}" target="_blank" rel="noopener">Convention & Visitors Bureau ↗</a>
+      <a href="https://susanbuchanan-75287.github.io/mercer-county-history/" target="_blank" rel="noopener">Historical Society ↗</a>
+      <a href="https://susanbuchanan-75287.github.io/visit-mercer-county-wv/walking-tour.html" target="_blank" rel="noopener">History & Heritage Trail ↗</a>
       <a href="about.html">About the County</a>
       <a href="portal.html">Board Portal</a>
     </div>
