@@ -11,7 +11,7 @@
     { "route": "/api/documents/*", "methods": ["DELETE"], "allowedRoles": ["admin", "commissioner"] },
     { "route": "/api/people", "methods": ["POST"], "allowedRoles": ["admin", "commissioner"] },
     { "route": "/api/people/*", "methods": ["DELETE"], "allowedRoles": ["admin", "commissioner"] },
-    { "route": "/.auth/login/github", "allowedRoles": ["anonymous"] },
+    { "route": "/.auth/login/github", "redirect": "/portal.html", "statusCode": 302 },
     { "route": "/.auth/login/aad", "allowedRoles": ["anonymous"] }
   ],
   "responseOverrides": {

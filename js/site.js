@@ -134,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   if (document.getElementById("adminApp")) initAdmin();
+  if (document.getElementById("publicRoster")) loadPublicRoster();
 
   /* gov banner "how you know" */
   var gbHow = document.getElementById("gbHow"), gbDetail = document.getElementById("gbDetail");
@@ -400,6 +401,23 @@ function loadPeople(){
       fetch(API + "/people/" + encodeURIComponent(b.dataset.del), { method:"DELETE" }).then(loadPeople).catch(function(){});
     }); });
   }).catch(function(){ box.innerHTML = '<p class="muted">API not deployed yet.</p>'; });
+}
+function loadPublicRoster(){
+  var box = document.getElementById("publicRoster"), sec = document.getElementById("rosterSection");
+  if(!box) return;
+  var LABEL = { active:"Active", retired:"Retired", former:"Former", appointed:"Appointed", vacant:"Vacant" };
+  fetch(API + "/people").then(function(r){ return r.ok?r.json():{items:[]}; }).then(function(d){
+    var items = (d.items||[]);
+    if (!items.length) { if (sec) sec.hidden = true; return; }
+    box.innerHTML = items.map(function(p){
+      var st = (p.status||"active");
+      return '<article class="roster-card"><div class="roster-card-head"><h3>'+esc(p.name)+'</h3>'+
+        '<span class="status-pill status-'+esc(st)+'">'+esc(LABEL[st]||cap(st))+'</span></div>'+
+        (p.role?'<p class="person-role">'+esc(p.role)+'</p>':"")+
+        (p.term?'<p class="person-term">'+esc(p.term)+'</p>':"")+'</article>';
+    }).join("");
+    if (sec) sec.hidden = false;
+  }).catch(function(){ if (sec) sec.hidden = true; });
 }
 
 /* --- helpers ------------------------------------------------------------- */

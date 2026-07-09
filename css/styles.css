@@ -630,6 +630,13 @@ html[data-theme="light"] .nav .seal-img{filter:drop-shadow(0 1px 3px rgba(12,42,
 .status-former{background:color-mix(in srgb,var(--mc-muted) 16%,transparent);color:var(--mc-muted)}
 .status-appointed{background:color-mix(in srgb,var(--mc-teal) 16%,transparent);color:var(--mc-teal)}
 .status-vacant{background:color-mix(in srgb,#c2410c 16%,transparent);color:#c2410c}
+.roster-public{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.roster-card{background:var(--mc-cream);border:1px solid var(--mc-line);border-radius:14px;padding:18px 20px}
+.roster-card-head{display:flex;align-items:center;gap:10px;justify-content:space-between;margin-bottom:4px}
+.roster-card-head h3{margin:0;font-size:1.05rem}
+.roster-card .person-role{margin:.1rem 0;font-weight:700;color:var(--mc-navy)}
+html[data-theme="dark"] .roster-card .person-role{color:var(--mc-gold-soft)}
+.roster-card .person-term{margin:.1rem 0;font-size:.85rem;color:var(--mc-muted)}
 
 /* commissioner portrait cards */
 .person .ava.photo{background:none;border:2px solid var(--mc-gold);overflow:hidden}

@@ -256,6 +256,10 @@ pages.push({ file:"government.html", active:"government.html", title:"The Commis
         </article>`).join("")}
       </div>
     </div></section>`
+  + `<section class="band alt" id="rosterSection" hidden><div class="wrap">
+      <div class="sec-head reveal"><span class="eyebrow">County officials</span><h2>Commissioners, officials &amp; appointments</h2><p class="muted">Current roster and status, maintained by the County Commission office.</p></div>
+      <div id="publicRoster" class="roster-public"></div>
+    </div></section>`
   + `<section class="band alt"><div class="wrap two-col">
       <div class="reveal"><span class="eyebrow">What we do</span><h2>Responsibilities</h2>
         <ul class="checklist">
@@ -642,10 +646,9 @@ pages.push({ file:"portal.html", active:null, title:"Board Portal",
       <h1>Board & Staff Portal</h1>
       <p class="lead">Secure sign-in for commissioners and authorized staff to publish notices, message the board and manage meetings.</p>
       <div class="portal-actions">
-        <a class="btn btn-navy" href="/.auth/login/aad?post_login_redirect_uri=/admin.html">Sign in with Microsoft</a>
-        <a class="btn btn-ghost" href="/.auth/login/github?post_login_redirect_uri=/admin.html">Sign in with GitHub</a>
+        <a class="btn btn-navy" href="/.auth/login/aad?post_login_redirect_uri=/admin.html">Sign in with your email</a>
       </div>
-      <p class="portal-reset">Password changes and resets are handled by your identity provider's own account page. <em>Google and email &amp; password sign-in can be enabled after upgrading hosting to the Standard plan.</em></p>
+      <p class="portal-reset"><a href="https://passwordreset.microsoftonline.com/" target="_blank" rel="noopener">Forgot your password?</a> — enter your email and Microsoft will send a secure reset link to your inbox. If you have not signed in before, use the button above and follow the prompts to set your password.</p>
       <p class="muted">Access is restricted to the <strong>commissioner</strong> and <strong>admin</strong> roles. Public users can view <a href="notices.html">published notices</a> and <a href="meetings.html">meeting recordings</a>.</p>
     </div></section>`
 });
@@ -781,10 +784,9 @@ pages.push({ file:"admin.html", active:null, title:"Board Admin",
               </div>
               <div class="set-card">
                 <h3>Password & sign-in</h3>
-                <p class="muted">Sign-in is handled by your identity provider (currently Microsoft/Entra ID or GitHub). To change or reset your password, use your provider's account page.</p>
-                <a class="btn btn-ghost" href="https://account.live.com/password/reset" target="_blank" rel="noopener">Reset Microsoft password</a>
-                <a class="btn btn-ghost" href="https://github.com/settings/security" target="_blank" rel="noopener" style="margin-top:.4rem">GitHub security settings</a>
-                <p class="muted" style="font-size:.85rem;margin-top:.5rem">Google and email & password sign-in (with self-service reset) can be added after upgrading hosting to the Standard plan.</p>
+                <p class="muted">Sign in with your email address. Microsoft handles authentication and can email you a secure password-reset link at any time.</p>
+                <a class="btn btn-ghost" href="https://passwordreset.microsoftonline.com/" target="_blank" rel="noopener">Reset password by email</a>
+                <p class="muted" style="font-size:.85rem;margin-top:.5rem">New commissioners are invited by an administrator and set their password on first sign-in.</p>
               </div>
               <div class="set-card">
                 <h3>Backend status</h3>
@@ -984,7 +986,7 @@ const policyBody = {
   <h2>Information we collect</h2><ul class="checklist"><li><strong>Information you provide</strong> — e.g., when you use a contact form or submit a request.</li><li><strong>Automatic technical data</strong> — standard server logs and privacy-respecting usage metrics to keep the site secure and improve service.</li></ul>
   <h2>How we use it</h2><p>We use information solely to respond to you, operate and secure the website, and meet legal obligations. We do <strong>not</strong> sell personal information.</p>
   <h2>Cookies &amp; storage</h2><p>This site uses <strong>no advertising or third-party tracking cookies</strong>. We use minimal local storage on your device for functional preferences only — for example, to remember your light/dark theme choice and which alert you have dismissed. These are not shared with anyone.</p>
-  <p>Sign-in for the board portal is optional and used only by authorized commissioners and staff. Authentication is handled by trusted identity providers — <strong>Microsoft (Entra ID), Google, email &amp; password, or GitHub</strong> — which set a secure session cookie that is strictly necessary to keep you signed in. Password changes and resets are managed by your chosen provider.</p>
+  <p>Sign-in for the board portal is optional and used only by authorized commissioners and staff. Authentication is handled by Microsoft using your email address, which sets a secure session cookie that is strictly necessary to keep you signed in. Password resets are emailed to you by Microsoft.</p>
   <h2>Public records notice</h2><p>Communications with a government agency may be subject to disclosure under the WV Freedom of Information Act.</p>
   <h2>Contact</h2><p>Questions about privacy? <a href="contact.html">Contact us</a> or call <a href="tel:${D.county.phoneRaw}">${D.county.phone}</a>.</p>`,
  "security-policy":`<p>The ${D.county.name} takes the security of its website and residents' information seriously.</p>
